@@ -1,21 +1,22 @@
 <!-- src/components/Header.vue -->
 <template>
   <header>
-    <nav class="container flex items-start py-4 mt-2 sm:mt-3">
+    <nav class="container flex items-start py-4 mt-2 md:mt-3">
       <div class="flex-1">
         <router-link to="/" class="text-2xl font-bold text-gray-800"
           ><img class="h-8" src="../assets/images/logon_bl.png"
         /></router-link>
       </div>
-      <div class="hidden sm:flex text-right">
+      <div class="hidden md:flex text-right">
         <MenuItem
           v-for="item in menuItems"
           :key="item.to"
           :to="item.to"
           :label="item.label"
+          :submenu="item.submenu"
         />
       </div>
-      <div class="flex sm:hidden">
+      <div class="flex md:hidden">
         <button
           @click="toggleMobileMenu"
           class="flex items-center px-2 py-2 rounded-full hover:bg-gray-200"
@@ -49,7 +50,16 @@ export default {
     return {
       mobileMenuOpen: false,
       menuItems: [
-        { to: "/about", label: "About BIGLEADER" },
+        {
+          to: "",
+          label: "About BIGLEADER",
+          submenu: [
+            { to: "/about", label: "빅리더 소개" },
+            { to: "/news", label: "뉴스" },
+            { to: "/cocreation", label: "Co-Creation" },
+            { to: "/faq", label: "FAQ" },
+          ],
+        },
         { to: "/projects", label: "PROJECT" },
         { to: "/instructors", label: "TEACHING" },
         { to: "/review", label: "REVIEW" },

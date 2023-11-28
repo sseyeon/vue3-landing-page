@@ -42,7 +42,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }

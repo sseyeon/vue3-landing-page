@@ -9,7 +9,7 @@
       :to="item.to"
       :label="item.label"
       @click="closeMobileMenu"
-      class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:rounded-lg"
+      class="block px-4 py-2 text-gray-800 z-50 hover:bg-gray-100 hover:rounded-lg"
     />
   </div>
 </template>
