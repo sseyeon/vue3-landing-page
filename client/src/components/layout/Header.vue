@@ -1,10 +1,10 @@
 <!-- src/components/Header.vue -->
 <template>
-  <header>
+  <header class="border-b border-gray-300">
     <nav class="container flex items-start py-4 mt-2 md:mt-3">
       <div class="flex-1">
         <router-link to="/" class="text-2xl font-bold text-gray-800"
-          ><img class="h-8" src="../assets/images/logon_bl.png"
+          ><img class="h-8" src="@/assets/images/logon_bl.png"
         /></router-link>
       </div>
       <div class="hidden md:flex text-right">
@@ -41,8 +41,8 @@
 </template>
 
 <script>
-import MenuItem from "./MenuItem.vue";
-import MobileMenu from "./MobileMenu.vue";
+import MenuItem from "@/components/layout/MenuItem.vue";
+import MobileMenu from "@/components/layout/MobileMenu.vue";
 
 export default {
   name: "Header",
@@ -64,7 +64,7 @@ export default {
         { to: "/instructors", label: "TEACHING" },
         { to: "/review", label: "REVIEW" },
         { to: "/apply", label: "APPLY" },
-        { to: "/lms", label: "LMS" },
+        { to: "", label: "LMS" },
       ],
     };
   },

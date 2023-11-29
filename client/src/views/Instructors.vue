@@ -8,9 +8,9 @@
 </template>
   
   <script>
-import Header from "@/components/Header.vue";
+import Header from "@/components/layout/Header.vue";
 import CardList from "@/components/CardList.vue";
-import Footer from "@/components/Footer.vue";
+import Footer from "@/components/layout/Footer.vue";
 
 export default {
   name: "Instructors",

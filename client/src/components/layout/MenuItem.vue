@@ -21,7 +21,7 @@
         v-for="(subItem, subIndex) in submenu"
         :key="subIndex"
         :to="subItem.to"
-        class="block py-2 px-4 text-gray-800 hover:bg-gray-200 text-center"
+        class="block py-2 px-4 text-gray-800 hover:text-blue-500 text-center"
       >
         {{ subItem.label }}
       </router-link>
