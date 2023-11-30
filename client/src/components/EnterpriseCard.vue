@@ -1,4 +1,4 @@
-<!-- src/components/EnterpriseCard.vue -->
+<!-- src/components/EnterpriseList.vue -->
 <template>
   <div class="flex flex-col rounded-md shadow-md">
     <div class="p-6 flex flex-col items-center">
@@ -16,7 +16,7 @@
   
   <script>
 export default {
-  name: "EnterpriseCard",
+  name: "EnterpriseList",
 };
 </script>
   
