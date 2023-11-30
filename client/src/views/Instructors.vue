@@ -4,7 +4,7 @@
     <Header />
     <TitleComponent
       titleText="Teaching"
-      subText="각 분야 국내 최고 수준의 전문가들과 함께 합니다"
+      subText="각 분야 국내 최고 수준의 전문가들과 함께 합니다."
     />
     <div class="container h-screen"></div>
     <Footer />
