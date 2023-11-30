@@ -1,5 +1,7 @@
 <template>
-  <div class="border-y border-[#3F986D]">
+  <div
+    class="sm:w-3/4 lg:w-8/12 flex flex-col mx-auto border-y border-[#3F986D]"
+  >
     <div class="flex pt-5">
       <div
         class="border-b border-[#3F986D] mr-5 text-[14px] lg:text-[20px] font-bold pb-10 w-[20%]"
