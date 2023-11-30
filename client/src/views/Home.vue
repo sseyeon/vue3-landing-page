@@ -22,13 +22,7 @@
             <font-awesome-icon :icon="['fas', 'circle-chevron-right']" />
           </a>
         </div>
-        <!-- <p class="mb-12">
-          <img
-            src="../assets/images/bigleader-hub.png"
-            alt=""
-            style="width: 800px; height: auto"
-          />
-        </p> -->
+
         <p class="mb-12">
           <img src="../assets/images/bigleader-growth.png" alt="" />
         </p>
@@ -59,7 +53,7 @@
       </div>
     </section>
     <!-- REVIEW 섹션 -->
-    <section class="py-20 mt-10">
+    <section class="bg-gray-50 py-20 mt-10">
       <!-- Heading -->
       <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
         <h1 class="text-blue-700 font-semibold text-3xl text-center">
@@ -69,15 +63,20 @@
           빅리더를 거쳐간 수료생들의 후기를 확인해보세요.
         </p>
       </div>
+      <div class="flex justify-center flex-wrap gap-2 mt-2">
+        <a href="#" class="text-gray-400 hover:text-gray-500">
+          더 많은 후기 보기
+          <font-awesome-icon :icon="['fas', 'circle-chevron-right']" />
+        </a>
+      </div>
       <div
-        class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-16"
+        class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-10 mb-4"
       >
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
+        <ReviewCard
+          v-for="reviewItem in reviewData"
+          :key="reviewItem.id"
+          :review="reviewItem"
+        />
       </div>
     </section>
     <!-- 교육 프로그램 섹션 -->
@@ -88,18 +87,12 @@
           교육 프로그램
         </h1>
         <p class="text-center text-gray-600 mt-4">
-          빅리더를 거쳐간 수료생들의 후기를 확인해보세요.
+          AI 개발 및 프로젝트 참여에 관심있는 분들은 필독!
         </p>
       </div>
-      <div
-        class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-16"
-      >
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
+      <div class="container max-w-screen-lg mt-12">
+        <!-- <EductionProgram /> -->
+        <ScheduleCard class="mt-8" />
       </div>
     </section>
     <!-- FAQ 섹션 -->
@@ -132,6 +125,9 @@ import Header from "@/components/layout/Header.vue";
 import Main from "@/components/Main.vue";
 import VideoList from "@/components/VideoList.vue";
 import Enterprise from "@/components/EnterpriseCard.vue";
+import ReviewCard from "@/components/ReviewCard.vue";
+import ScheduleCard from "@/components/ScheduleCard.vue";
+import EductionProgram from "@/components/EductionProgram.vue";
 import FAQ from "@/components/FAQ.vue";
 import Footer from "@/components/layout/Footer.vue";
 import Swiper from "@/components/Swiper.vue";
@@ -143,8 +139,66 @@ export default {
     Swiper,
     VideoList,
     Enterprise,
+    ReviewCard,
+    ScheduleCard,
+    EductionProgram,
     FAQ,
     Footer,
+  },
+  data() {
+    return {
+      // 실제 데이터로 대체해야 합니다.
+      reviewData: [
+        {
+          id: 1,
+          title: "지식이 남들보다 뒤쳐지는 상황에서!",
+          content: "빅리더 9기",
+          name: "김빅리더",
+          vid: "Tr_uhyAi-Lw",
+          link: "https://www.youtube.com/watch?v=Tr_uhyAi",
+        },
+        {
+          id: 2,
+          title: "흔치 않은 기회에요.",
+          content: "빅리더 9기",
+          name: "김예은",
+          vid: "3IbVYqZ5vts",
+          link: "https://www.youtube.com/watch?v=3IbVYqZ5vts",
+        },
+        {
+          id: 3,
+          title: "오직 프로젝트에 집중했어요!",
+          content: "빅리더 9기",
+          name: "문현석",
+          vid: "V_dFzf2VtQM",
+          link: "https://example.com/news1",
+        },
+        {
+          id: 4,
+          title: "면접에서 어필 할 수 있는 방법",
+          content: "빅리더 9기",
+          name: "최가영",
+          vid: "Sv-IPnEU5AY",
+          link: "https://www.youtube.com/watch?v=Tr_uhyAi",
+        },
+        {
+          id: 5,
+          title: "밤 낮으로 매진했어요",
+          content: "빅리더 9기",
+          name: "최은정",
+          vid: "e6nPhvUgfF4",
+          link: "https://www.youtube.com/watch?v=3IbVYqZ5vts",
+        },
+        {
+          id: 6,
+          title: "나만의 무기를 갖는 법",
+          content: "빅리더 9기",
+          name: "주세현",
+          vid: "kP8fxMZFeGc",
+          link: "https://example.com/news1",
+        },
+      ],
+    };
   },
 };
 </script>
