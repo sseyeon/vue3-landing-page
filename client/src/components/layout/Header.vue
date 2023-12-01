@@ -61,7 +61,7 @@ export default {
           ],
         },
         { to: "/projects", label: "PROJECT" },
-        { to: "/instructors", label: "TEACHING" },
+        { to: "/instructors", label: "INSTRUCTOR" },
         { to: "/review", label: "REVIEW" },
         { to: "/apply", label: "APPLY" },
         { to: "", label: "LMS" },

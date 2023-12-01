@@ -12,7 +12,8 @@
     >
       <div class="p-4 text-white">
         <div class="text-xl">
-          {{ review.name }} <span class="text-sm">빅리더 9기</span>
+          {{ review.name }}
+          <span class="text-sm"> {{ review.year }}</span>
         </div>
         <span class="font-bold">{{ review.title }}</span>
       </div>

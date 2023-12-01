@@ -152,7 +152,7 @@ export default {
         {
           id: 1,
           title: "지식이 남들보다 뒤쳐지는 상황에서!",
-          content: "빅리더 9기",
+          year: "빅리더 9기",
           name: "김빅리더",
           vid: "Tr_uhyAi-Lw",
           link: "https://www.youtube.com/watch?v=Tr_uhyAi",
@@ -160,7 +160,7 @@ export default {
         {
           id: 2,
           title: "흔치 않은 기회에요.",
-          content: "빅리더 9기",
+          year: "빅리더 9기",
           name: "김예은",
           vid: "3IbVYqZ5vts",
           link: "https://www.youtube.com/watch?v=3IbVYqZ5vts",
@@ -168,7 +168,7 @@ export default {
         {
           id: 3,
           title: "오직 프로젝트에 집중했어요!",
-          content: "빅리더 9기",
+          year: "빅리더 9기",
           name: "문현석",
           vid: "V_dFzf2VtQM",
           link: "https://example.com/news1",
@@ -176,7 +176,7 @@ export default {
         {
           id: 4,
           title: "면접에서 어필 할 수 있는 방법",
-          content: "빅리더 9기",
+          year: "빅리더 9기",
           name: "최가영",
           vid: "Sv-IPnEU5AY",
           link: "https://www.youtube.com/watch?v=Tr_uhyAi",
@@ -184,7 +184,7 @@ export default {
         {
           id: 5,
           title: "밤 낮으로 매진했어요",
-          content: "빅리더 9기",
+          year: "빅리더 9기",
           name: "최은정",
           vid: "e6nPhvUgfF4",
           link: "https://www.youtube.com/watch?v=3IbVYqZ5vts",
@@ -192,7 +192,7 @@ export default {
         {
           id: 6,
           title: "나만의 무기를 갖는 법",
-          content: "빅리더 9기",
+          year: "빅리더 9기",
           name: "주세현",
           vid: "kP8fxMZFeGc",
           link: "https://example.com/news1",
