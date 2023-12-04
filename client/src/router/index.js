@@ -25,6 +25,15 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      // savedPosition은 브라우저 뒤로가기나 앞으로가기를 했을 때 사용됩니다.
+      return savedPosition;
+    } else {
+      // 페이지 이동 시 맨 위로 스크롤
+      return { top: 0 };
+    }
+  },
 });
 
 export default router;

@@ -1,13 +1,13 @@
 <!-- src/componets/InstructorCard.vue  -->
 <template>
-  <section class="flex flex-col justify-center pt-4">
+  <section class="flex flex-col justify-center pt-4 border-b">
     <article
       class="flex md:flex-inherit rounded-lg relative overflow-hidden mb-8 flex-row my-custom-font"
     >
       <a class="contents relative max-w-xs overflow-hidden">
         <img
           :class="[
-            'h-auto object-cover rounded-lg border-b-8 border-r-8 max-w-[170px] max-h-full',
+            'h-auto object-cover rounded-lg border-b-8 border-r-8 max-w-[140px] max-h-[170px]',
             {
               'border-[#C5E1DE]': instructor.id % 3 === 0,
               'border-gray-300': instructor.id % 3 === 1,

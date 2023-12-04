@@ -17,10 +17,10 @@
           잇(IT)는 혁신 가드닝 허브 역할을 제공
         </p>
         <div class="flex justify-center flex-wrap gap-2 mb-4">
-          <a href="#" class="text-gray-400 hover:text-gray-500">
+          <router-link to="/about" class="text-gray-400 hover:text-gray-500">
             자세히 보기
             <font-awesome-icon :icon="['fas', 'circle-chevron-right']" />
-          </a>
+          </router-link>
         </div>
 
         <p class="mb-12">
@@ -64,10 +64,10 @@
         </p>
       </div>
       <div class="flex justify-center flex-wrap gap-2 mt-2">
-        <a href="#" class="text-gray-400 hover:text-gray-500">
+        <router-link to="review" class="text-gray-400 hover:text-gray-500">
           더 많은 후기 보기
           <font-awesome-icon :icon="['fas', 'circle-chevron-right']" />
-        </a>
+        </router-link>
       </div>
       <div
         class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-10 mb-4"
@@ -108,12 +108,13 @@
             언제든지 문의해주세요.
           </p>
         </div>
-        <FAQ :faqs="faqs" />
-        <div class="flex flex-col sm:w-3/4 lg:w-5/12 mx-auto">
-          <button type="button" class="mt-12 flex self-center btn btn-primary">
-            더보기
-          </button>
+        <div class="flex justify-center flex-wrap gap-2 mt-2">
+          <router-link to="faq" class="text-gray-400 hover:text-gray-500">
+            더 보기
+            <font-awesome-icon :icon="['fas', 'circle-chevron-right']" />
+          </router-link>
         </div>
+        <FAQ :faqs="faqs" />
       </div>
     </section>
     <Footer />
