@@ -1,41 +1,66 @@
+<!-- src/componets/ReviewCard.vue  -->
 <template>
-  <div
-    class="relative max-w-xs overflow-hidden rounded-2xl shadow-lg group cursor-pointer"
-  >
-    <img
-      class="transition-transform group-hover:scale-110 duration-200"
-      :src="'https://img.youtube.com/vi/' + review.vid + '/0.jpg'"
-      alt=""
-    />
-    <div
-      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent"
+  <section class="flex flex-col justify-center pt-4">
+    <article
+      class="flex md:flex-inherit rounded-lg relative overflow-hidden mb-8 flex-row my-custom-font"
     >
-      <div class="p-4 text-white">
-        <div class="text-xl">
+      <a class="contents relative max-w-xs overflow-hidden">
+        <img
+          :class="[
+            'h-auto object-cover rounded-lg border-b-8 border-r-8 max-w-[170px] max-h-[170px]',
+            {
+              'border-[#C5E1DE]': review.id % 3 === 0,
+              'border-gray-300': review.id % 3 === 1,
+              'border-[#F5F5DC]': review.id % 3 === 2,
+            },
+          ]"
+          :src="review.imgSrc"
+          alt="review Image"
+        />
+      </a>
+      <div class="relative flex flex-col p-4">
+        <h1 class="text-xl font-semibold mb-1 max-w-fit border-b-2">
           {{ review.name }}
-          <span class="text-sm"> {{ review.year }}</span>
+          <span class="text-base">{{ review.year }}</span>
+        </h1>
+        <p class="text-gray-600 font-semibold mb-2">
+          {{ review.expertise }}
+        </p>
+        <div class="text-justify text-sm lg:max-h-72 md:max-h-60 overflow-auto">
+          <p v-html="review.content"></p>
         </div>
-        <span class="font-bold">{{ review.title }}</span>
       </div>
-    </div>
-  </div>
+    </article>
+  </section>
 </template>
-  
-  <script>
-import CustomIconButtonVue from "./CustomIconButton.vue";
-
+    
+    <script>
 export default {
-  name: "ReviewCard",
-  components: {
-    CustomIconButton: CustomIconButtonVue,
-  },
   props: {
     review: Object, // 리뷰 정보를 받는 프로퍼티
   },
 };
 </script>
-  
-  <style scoped>
-/* 추가적인 스타일링을 원하는 경우 여기에 작성하세요. */
+    
+    <style scoped>
+/* 추가된 부분: 이미지가 크기에 상관없이 모두 보이도록 설정 */
+.contents img {
+  /* max-width: 100%; 이미지의 최대 너비를 부모 요소에 맞게 설정 */
+  height: auto; /* 이미지의 높이를 자동으로 조절하여 가로세로 비율 유지 */
+}
+/* 추가된 부분: 모바일 화면에서만 flex-wrap 적용 */
+@media (max-width: 767px) {
+  .flex-row {
+    flex-wrap: wrap;
+  }
+}
+/* Google Fonts에서 가져온 글자체를 사용하는 클래스 */
+.my-custom-font {
+  font-family: "Hahmlet", sans-serif; /* Hahmlet 글자체 적용 */
+}
 </style>
-  
+   
+  <style>
+/* Google Fonts에서 가져온 글자체 스타일 직접 추가 */
+@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+</style>

@@ -6,7 +6,7 @@
       titleText="Instructor"
       subText="각 분야 국내 최고 수준의 전문가들과 함께 합니다."
     />
-    <div class="container lg:w-8/12 mt-8">
+    <div class="container lg:w-8/12 mt-12">
       <InstructorCard
         v-for="instructorsItem in instructorData"
         :key="instructorsItem.id"

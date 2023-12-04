@@ -72,10 +72,10 @@
       <div
         class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-10 mb-4"
       >
-        <ReviewCard
-          v-for="reviewItem in reviewData"
-          :key="reviewItem.id"
-          :review="reviewItem"
+        <ReviewVideoCard
+          v-for="videoItem in videoData"
+          :key="videoItem.id"
+          :video="videoItem"
         />
       </div>
     </section>
@@ -125,7 +125,7 @@ import Header from "@/components/layout/Header.vue";
 import Main from "@/components/Main.vue";
 import VideoList from "@/components/VideoList.vue";
 import Enterprise from "@/components/EnterpriseCard.vue";
-import ReviewCard from "@/components/ReviewCard.vue";
+import ReviewVideoCard from "@/components/ReviewVideoCard.vue";
 import ScheduleCard from "@/components/ScheduleCard.vue";
 import EductionProgram from "@/components/EductionProgram.vue";
 import FAQ from "@/components/FAQ.vue";
@@ -139,7 +139,7 @@ export default {
     Swiper,
     VideoList,
     Enterprise,
-    ReviewCard,
+    ReviewVideoCard,
     ScheduleCard,
     EductionProgram,
     FAQ,
@@ -148,7 +148,7 @@ export default {
   data() {
     return {
       // 실제 데이터로 대체해야 합니다.
-      reviewData: [
+      videoData: [
         {
           id: 1,
           title: "지식이 남들보다 뒤쳐지는 상황에서!",
