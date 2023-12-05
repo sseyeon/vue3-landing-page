@@ -4,15 +4,18 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
-
+/* 전역적으로 모든 요소에 트랜지션 효과 적용 */
+*,
+*:before,
+*:after {
+  transition: ease-in-out 0.15s; /* 여기는 트랜지션 지속 시간입니다. 필요에 따라 조절 가능합니다. */
+}
 @layer components {
   .btn {
     @apply py-1 px-3 text-base rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75;
-    transition: transform 300s;
   }
-
   .btn-primary {
-    @apply bg-blue-500 text-white hover:bg-blue-700 focus:ring-blue-400;
+    @apply bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-400;
   }
   .btn-detail {
     @apply py-1 px-2 bg-gray-400 text-white hover:bg-gray-500 focus:ring-gray-600;
