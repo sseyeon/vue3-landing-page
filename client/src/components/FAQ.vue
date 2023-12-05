@@ -6,7 +6,7 @@
     <div v-for="(faq, index) in faqs" :key="index" class="mb-4">
       <div
         @click="toggleAnswer(index)"
-        class="flex items-center border-b py-4 cursor-pointer transition duration-300 ease-in-out"
+        class="flex items-center border-b py-4 cursor-pointer"
       >
         <span class="flex-1 font-medium">{{ faq.question }}</span>
         <font-awesome-icon
@@ -15,17 +15,20 @@
         />
       </div>
       <!-- Answer -->
-      <div
-        v-show="faq.expanded"
-        class="text-gray-600 mt-2 transition duration-300 ease-in-out"
-      >
-        {{ faq.answer }}
-      </div>
+      <Transition name="fade">
+        <div
+          v-if="faq.expanded"
+          key="answer"
+          class="text-gray-600 mt-2 transition"
+        >
+          {{ faq.answer }}
+        </div>
+      </Transition>
     </div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 export default {
   name: "FAQ",
   props: {
@@ -38,4 +41,18 @@ export default {
   },
 };
 </script>
-  
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-from,
+.fade-enter-to {
+  opacity: 1;
+}
+</style>
