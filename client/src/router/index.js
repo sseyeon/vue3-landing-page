@@ -35,5 +35,25 @@ const router = createRouter({
     }
   },
 });
+router.beforeEach((to, from, next) => {
+  // Botpress 웹챗 초기화
+  window.botpressWebChat.init({
+    // Botpress 웹챗 초기화 설정...
+    composerPlaceholder: "리더봇과 인사를 나누어 보세요.",
+    botConversationDescription: "빅리더의 챗봇 리더봇이에요 :)",
+    botId: "88897e73-42e4-41af-97ad-bb45bec41936",
+    hostUrl: "https://cdn.botpress.cloud/webchat/v0",
+    messagingUrl: "https://messaging.botpress.cloud",
+    clientId: "88897e73-42e4-41af-97ad-bb45bec41936",
+    botName: "리더봇",
+    stylesheet:
+      "https://webchat-styler-css.botpress.app/prod/code/1a56c776-4903-43ab-bac7-536c37cf7647/v31235/style.css",
+    useSessionStorage: true,
+    enableConversationDeletion: true,
+  });
+
+  // 계속 진행
+  next();
+});
 
 export default router;
