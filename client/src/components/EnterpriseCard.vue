@@ -1,11 +1,17 @@
 <!-- src/components/EnterpriseCard.vue -->
 <template>
-  <div class="flex flex-col rounded-md shadow-md">
-    <div class="p-6 flex flex-col items-center">
-      <img src="../assets/images/enterprise01.png" alt="" />
-      <h3 class="mt-5 mb-2 text-black text-lg">💡 스마트 수자원 관리</h3>
+  <div class="flex flex-col rounded-md shadow-md max-h-[288px]">
+    <div class="p-6 flex flex-col items-center h-[206px]">
+      <img
+        :src="enterprise.imgSrc"
+        class="h-[74px] w-full object-contain"
+        alt=""
+      />
+      <h3 class="mt-5 mb-2 text-black text-base font-medium">
+        💡 {{ enterprise.project }}
+      </h3>
 
-      <p class="mb-2 text-gray-600 font-light">세아베스틸지주</p>
+      <p class="mb-2 text-gray-600 font-light">{{ enterprise.name }}</p>
     </div>
     <hr class="border-b text-gray-50" />
     <div class="flex p-6">
@@ -17,6 +23,9 @@
   <script>
 export default {
   name: "EnterpriseCard",
+  props: {
+    enterprise: Object, // 리뷰 정보를 받는 프로퍼티
+  },
 };
 </script>
   

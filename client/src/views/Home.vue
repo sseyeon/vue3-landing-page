@@ -41,15 +41,36 @@
           파견 프로젝트
         </p>
       </div>
+
+      <!-- 기업 목록 섹션 -->
       <div
         class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-16"
       >
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
-        <Enterprise />
+        <!-- 기업 목록을 페이징하여 보여주기 -->
+        <Enterprise
+          v-for="enterpriseItem in paginatedEnterpriseData"
+          :key="enterpriseItem.id"
+          :enterprise="enterpriseItem"
+        />
+      </div>
+
+      <!-- 페이징 컨트롤 -->
+      <div class="flex justify-center mt-8 text-gray-500">
+        <button
+          @click="previousPage"
+          :disabled="currentPage === 1"
+          class="hover:text-gray-700 cursor-pointer"
+        >
+          <font-awesome-icon :icon="['fas', 'circle-chevron-left']" />
+        </button>
+        <span class="mx-4">{{ currentPage }} / 2</span>
+        <button
+          @click="nextPage"
+          :disabled="currentPage === totalPages"
+          class="hover:text-gray-700 cursor-pointer"
+        >
+          <font-awesome-icon :icon="['fas', 'circle-chevron-right']" />
+        </button>
       </div>
     </section>
     <!-- REVIEW 섹션 -->
@@ -131,7 +152,7 @@ import ScheduleCard from "@/components/ScheduleCard.vue";
 import EductionProgram from "@/components/EductionProgram.vue";
 import FAQ from "@/components/FAQ.vue";
 import Footer from "@/components/layout/Footer.vue";
-import Swiper from "@/components/Swiper.vue";
+import Swiper from "swiper/bundle";
 export default {
   name: "Home",
   components: {
@@ -148,6 +169,8 @@ export default {
   },
   data() {
     return {
+      itemsPerPage: 6, // 페이지당 표시할 항목 수
+      currentPage: 1, // 현재 페이지
       // 실제 데이터로 대체해야 합니다.
       videoData: [
         {
@@ -229,7 +252,121 @@ export default {
           expanded: false,
         },
       ],
+      enterpriseData: [
+        {
+          id: 1,
+          name: "한국관광공사",
+          project: "지역 소멸 및 인구 감소 대응",
+          imgSrc: require("@/assets/images/partners/Korea_Tourism_Organization.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 2,
+          name: "건강보험심사평가원",
+          project: "Healthcare",
+          imgSrc: require("@/assets/images/partners/Health Insurance.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 3,
+          name: "한국수자원공사",
+          project: "스마트수자원관리",
+          imgSrc: require("@/assets/images/partners/Korea_Water_Resources_Corporation_1.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 4,
+          name: "국립공원공단",
+          project: "스마트 ECO",
+          imgSrc: require("@/assets/images/partners/National_Parks.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 5,
+          name: "세아베스틸",
+          project: "AI 소재",
+          imgSrc: require("@/assets/images/partners/Ceabestil.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 6,
+          name: "세아창원특수강",
+          project: "공정혁신",
+          imgSrc: require("@/assets/images/partners/Seachangwon_Specialty_Course.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 7,
+          name: "대한무역투자진흥공사",
+          project: "스마트 무역",
+          imgSrc: require("@/assets/images/partners/kotra_1.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 8,
+          name: "한국산업단지공단",
+          project: "산업혁신",
+          imgSrc: require("@/assets/images/partners/Korea_Industrial_Complex_Corporation_1.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 9,
+          name: "한국고용정보원, 근로복지공단",
+          project: "스마트고용",
+          imgSrc: require("@/assets/images/partners/Korea_Employment_Information_Center.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 10,
+          name: "사회보장정보원",
+          project: "국민행복 서비스",
+          imgSrc: require("@/assets/images/partners/Korea_Social_Security_Administration.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 11,
+          name: "SpringCloud,SOS LAB",
+          project: "농촌형 모빌리티",
+          imgSrc: require("@/assets/images/partners/SpringCloud.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 12,
+          name: "한국평가데이터",
+          project: "ESG",
+          imgSrc: require("@/assets/images/partners/kodata.png"),
+          link: "https://example.com/news1",
+        },
+      ],
     };
+  },
+  computed: {
+    paginatedEnterpriseData() {
+      // 현재 페이지에 맞게 기업 데이터를 페이징하여 반환
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      const endIndex = startIndex + this.itemsPerPage;
+      return this.enterpriseData.slice(startIndex, endIndex);
+    },
+    totalPages() {
+      // 전체 페이지 수 계산
+      return Math.ceil(this.enterpriseData.length / this.itemsPerPage);
+    },
+    // 기타 필요한 계산된 속성들
+  },
+  methods: {
+    previousPage() {
+      // 이전 페이지로 이동하는 메서드
+      if (this.currentPage > 1) {
+        this.currentPage -= 1;
+      }
+    },
+    nextPage() {
+      // 다음 페이지로 이동하는 메서드
+      if (this.currentPage < this.totalPages) {
+        this.currentPage += 1;
+      }
+    },
+    // 기타 필요한 메서드들
   },
 };
 </script>
