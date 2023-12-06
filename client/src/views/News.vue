@@ -40,6 +40,7 @@
         v-for="newsItem in filteredNews"
         :key="newsItem.id"
         :news="newsItem"
+        @article-click="redirectToArticle"
       />
     </div>
     <!-- Show message if there are no news for the selected category -->
@@ -123,6 +124,11 @@ export default {
     // 카테고리 변경 메서드
     changeCategory(category) {
       this.activeCategory = category;
+    },
+    // 리다이렉션을 처리할 메서드 추가
+    redirectToArticle(newsId) {
+      // Vue Router를 사용하여 해당 아티클 페이지로 이동합니다
+      this.$router.push(`/article/${newsId}`);
     },
   },
 };

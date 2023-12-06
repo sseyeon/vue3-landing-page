@@ -1,7 +1,10 @@
 <!-- NewsPreview.vue -->
 
 <template>
-  <div class="bg-white p-6 rounded-md border border-[#e4e4e5] group transition">
+  <div
+    class="bg-white p-6 rounded-md border border-[#e4e4e5] group transition"
+    @click="redirectToArticle"
+  >
     <div class="group-hover:scale-105 transition duration-300 cursor-pointer">
       <!-- 기사 이미지 (예시: 이미지 주소를 실제 데이터로 대체해야 합니다) -->
       <img
@@ -44,6 +47,9 @@ export default {
         return text.slice(0, maxLength) + "...";
       }
       return text;
+    },
+    redirectToArticle() {
+      this.$emit("article-click", this.news.id);
     },
   },
 };
