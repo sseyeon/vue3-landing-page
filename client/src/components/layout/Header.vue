@@ -1,6 +1,8 @@
 <!-- src/components/Header.vue -->
 <template>
-  <header class="border-b border-gray-300">
+  <header
+    class="border-b border-gray-300 sticky top-0 bg-white w-full z-10 transition-all"
+  >
     <nav class="container flex items-start py-4 mt-2 md:mt-3">
       <div class="flex-1">
         <router-link to="/" class="text-2xl font-bold text-gray-800"

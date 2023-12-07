@@ -61,15 +61,11 @@ export default {
     SwiperSlide,
   },
   setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    const onSlideChange = () => {
-      console.log("slide change");
-    };
+    const onSwiper = (swiper) => {};
+    const onSlideChange = () => {};
 
     // Assuming that headerHeight is a computed property or value that represents the header height
-    const headerHeight = 60; // Replace this with the actual header height
+    const headerHeight = 77; // Replace this with the actual header height
 
     return {
       onSwiper,
