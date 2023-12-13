@@ -106,7 +106,7 @@
         </div>
       </section>
       <section ref="sec02" id="#sec02" class="mt-24">
-        <!-- Feature #2 -->
+        <!-- Feature #1 -->
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-12 border-b">
           <div
             class="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-16 mb-24"
@@ -133,6 +133,7 @@
             </div>
           </div>
         </div>
+        <!-- Feature #2 -->
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto">
           <div
             class="container flex flex-col lg:flex-row items-center justify-center gap-x-24 mb-24"
@@ -172,6 +173,7 @@
             </div>
           </div>
         </div>
+        <!-- Feature #3 -->
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-12 border-b">
           <div
             class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-screen-lg mt-4 mb-16"
@@ -238,9 +240,118 @@
             </div>
           </div>
         </div>
+        <!-- Feature #4 -->
+        <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-12 border-b">
+          <div
+            class="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-16 mb-24"
+          >
+            <!-- Content -->
+            <div class="flex flex-1 flex-col items-center lg:items-start">
+              <h1 class="text-3xl font-medium mb-2">
+                다양한 참여자들에게 제공되는 가치
+              </h1>
+              <p
+                class="text-gray-600 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
+              ></p>
+              <p class="mb-8">
+                <span class="italic text-lg mb-2"
+                  ><font-awesome-icon
+                    :icon="['fas', 'quote-left']"
+                    class="text-gray-400" />
+                  1. 청년에게는 변화와 성장을
+                  <font-awesome-icon
+                    :icon="['fas', 'quote-right']"
+                    class="text-gray-400"
+                /></span>
+                <br />
+                빅리더의 혁신 가드닝 Hub는 청년들에게 새로운 기회와 도전을
+                제공하며, 지속적인 변화와 성장을 촉진합니다.
+              </p>
+
+              <p class="mb-8">
+                <span class="italic text-lg mb-2"
+                  ><font-awesome-icon
+                    :icon="['fas', 'quote-left']"
+                    class="text-gray-400" />
+                  2. 기업에게는 성장을
+                  <font-awesome-icon
+                    :icon="['fas', 'quote-right']"
+                    class="text-gray-400"
+                /></span>
+                <br />
+                기업은 빅리더의 혁신 가드닝 Hub를 통해 혁신적인 솔루션과 인재를
+                발굴하여 성과를 창출할 수 있습니다.
+              </p>
+
+              <p class="mb-8">
+                <span class="italic text-lg mb-2"
+                  ><font-awesome-icon
+                    :icon="['fas', 'quote-left']"
+                    class="text-gray-400" />
+                  3. 대학과 빅리더에게는 실적과 역량을
+                  <font-awesome-icon
+                    :icon="['fas', 'quote-right']"
+                    class="text-gray-400"
+                /></span>
+                <br />
+                대학과 빅리더는 협력을 통해 현장에서의 실적과 전문 역량을 함께
+                키우며, 산학협력을 통한 지속적인 발전을 이룹니다.
+              </p>
+              <p class="mb-8">
+                <span class="italic text-lg mb-2"
+                  ><font-awesome-icon
+                    :icon="['fas', 'quote-left']"
+                    class="text-gray-400" />
+                  4. 지자체에는 성공 모델을
+                  <font-awesome-icon
+                    :icon="['fas', 'quote-right']"
+                    class="text-gray-400"
+                /></span>
+                <br />
+                빅리더의 혁신 가드닝 Hub는 지자체에게 성공적인 모델을 제공하고
+                지역사회의 발전에 기여합니다.
+              </p>
+              <p class="mt-2">
+                이처럼, 빅리더는 혁신과 협력을 기반으로 한 가치 창출을 통해
+                다양한 이해관계자들에게 긍정적인 영향을 미치고, 미래를 새롭게
+                이끌어가는 역할을 수행합니다.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
       <section ref="sec03" id="#sec03">
-        <div class="h-screen">섹션3</div>
+        <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-12 border-b">
+          <div
+            class="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-16 mb-24"
+          >
+            <!-- Content -->
+            <div class="flex flex-1 flex-col items-center lg:items-start">
+              <h1 class="text-3xl font-medium mb-2">
+                <font-awesome-icon
+                  :icon="['fas', 'quote-left']"
+                  class="text-gray-400"
+                />
+                빅리더의 혁신 가드닝 HUB
+                <font-awesome-icon
+                  :icon="['fas', 'quote-right']"
+                  class="text-gray-400"
+                />
+              </h1>
+              <div
+                class="text-gray-600 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
+              >
+                빅리더의 혁신 가드닝 Hub은 다양한 이해관계자들 간의 유기적인
+                협력을 통해 지역 및 국제적인 혁신을 촉진하고 인재 양성에
+                기여하는 중심적인 역할을 합니다.<br /><br />
+                <img
+                  src="@/assets/images/bigleader-hub-03.png"
+                  class="rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <section ref="sec04" id="#sec04">
         <div class="h-screen">섹션4</div>
