@@ -5,7 +5,7 @@
     <!-- 메인 섹션 -->
     <Main class="z-0" />
     <!-- 기업 프로젝트 섹션 -->
-    <section class="py-20">
+    <section class="py-20 mt-10">
       <!-- Heading -->
       <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
         <h1 class="text-blue-700 font-semibold text-3xl text-center">
@@ -136,6 +136,39 @@
         <FAQ :faqs="faqs" />
       </div>
     </section>
+    <!-- 기업 리스트 -->
+    <section class="bg-gray-50 py-20">
+      <div class="container">
+        <!-- Heading -->
+        <div
+          class="relative mt-4 sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
+        >
+          <h1 class="text-blue-700 font-semibold text-3xl text-center">
+            아직도 망설여지시나요?
+          </h1>
+          <p class="text-center text-gray-600 mt-4 mb-10">
+            이미 102개의 기업이 함께 하고 있습니다.
+          </p>
+          <EnterPriseList />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div
+        class="h-[420px] relative mt-24 mb-24 sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
+      >
+        <h1 class="text-center text-4xl font-medium mb-6">
+          모든 것을 바꿀 수 있는 능력, <br />
+          빅리더와 함께 시작하세요.
+        </h1>
+        <div class="flex justify-center flex-wrap gap-2">
+          <button type="button" class="btn btn-outline-primary">
+            지원하기
+            <font-awesome-icon :icon="['fas', 'fa-paper-plane']" />
+          </button>
+        </div>
+      </div>
+    </section>
     <Footer />
   </div>
 </template>
@@ -145,6 +178,7 @@ import Header from "@/components/layout/Header.vue";
 import Main from "@/components/Main.vue";
 import VideoList from "@/components/VideoList.vue";
 import Enterprise from "@/components/EnterpriseCard.vue";
+import EnterPriseList from "@/components/EnterpriseList.vue";
 import ReviewVideoCard from "@/components/ReviewVideoCard.vue";
 import ScheduleCard from "@/components/ScheduleCard.vue";
 import EductionProgram from "@/components/EductionProgram.vue";
@@ -159,6 +193,7 @@ export default {
     Swiper,
     VideoList,
     Enterprise,
+    EnterPriseList,
     ReviewVideoCard,
     ScheduleCard,
     EductionProgram,

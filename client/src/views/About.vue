@@ -2,7 +2,7 @@
 <template>
   <div>
     <Header />
-    <TitleComponent titleText="Introduce" subText="빅리더 혁신 가드닝" />
+    <TitleComponent titleText="Introduce" subText="" />
     <div
       class="mt-4 mb-8 z-10"
       :class="{
@@ -10,7 +10,7 @@
           isActive,
       }"
     >
-      <div class="flex justify-center space-x-4">
+      <!-- <div class="flex justify-center space-x-4">
         <button
           @click="changeCategory('sec01')"
           :class="{ 'text-blue-500 ': activeCategory === 'sec01' }"
@@ -37,10 +37,18 @@
         >
           성과
         </button>
-      </div>
+      </div> -->
     </div>
     <div class="container mt-20">
       <section ref="sec01" id="#sec01">
+        <div
+          class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto border-b flex flex-col justify-center items-center"
+        >
+          <img src="@/assets/images/logon_bl.png" class="mt-20" />
+          <p class="text-center text-2xl mt-4 mb-40 font-semibold">
+            더할 나위 없는 강력한 성장
+          </p>
+        </div>
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto border-b">
           <div
             class="container flex flex-col lg:flex-row items-center justify-center gap-x-24 mb-24"
@@ -57,16 +65,16 @@
             <div class="flex flex-1 flex-col items-center lg:items-start">
               <h1 class="text-3xl font-medium">Making Social Good Tree</h1>
               <p
-                class="text-lg text-gray-600 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
+                class="text-lg my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
               >
                 <font-awesome-icon
                   :icon="['fas', 'quote-left']"
-                  class="text-gray-400"
+                  class="text-blue-300"
                 />
                 선한 영향력과 혁신으로 세상을 이롭게 하라
                 <font-awesome-icon
                   :icon="['fas', 'quote-right']"
-                  class="text-gray-400"
+                  class="text-blue-300"
                 />
               </p>
               <p
@@ -100,9 +108,6 @@
               </p>
             </div>
           </div>
-        </div>
-        <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-12 border-b">
-          <img src="@/assets/images/swipe-img-01.jpg" class="rounded-lg" />
         </div>
       </section>
       <section ref="sec02" id="#sec02" class="mt-24">
@@ -148,27 +153,26 @@
             </div>
             <!-- Content -->
             <div class="flex flex-1 flex-col items-center lg:items-start">
-              <h1 class="text-3xl font-medium">우리의 가치 창출 철학</h1>
+              <h1 class="text-3xl font-medium">격이 다른 커리큘럼</h1>
               <p
-                class="text-lg text-gray-600 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
+                class="text-lg my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
               >
                 <font-awesome-icon
                   :icon="['fas', 'quote-left']"
-                  class="text-gray-400"
+                  class="text-blue-300"
                 />
-                4차 산업혁명 시대에 적합한 인재를 창출하고, <br />
-                선순환 가치 창출 시스템
+                사전 교육부터, 현장 프로젝트까지 함께.
                 <font-awesome-icon
                   :icon="['fas', 'quote-right']"
-                  class="text-gray-400"
+                  class="text-blue-300"
                 />
               </p>
               <p
                 class="text-gray-600 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
               >
                 선순환 가치 창출 시스템을 통해, 우리는 다양한 층위의
-                참여자들에게 변화와 성장을 제공합니다. 이를 위해 우리는 다음과
-                같은 핵심 원칙을 가지고 있습니다:
+                참여자들에게 변화와 성장의 기회를 제공합니다. 이를 위한 우리의
+                주요 지향점은 다음과 같습니다:
               </p>
             </div>
           </div>
@@ -187,7 +191,7 @@
               /></span>
               <h3 class="mb-2 text-lg font-semibold">
                 전국 단위 <br />
-                학생 모집
+                학생 선발
               </h3>
               <p class="text-gray-600">
                 뛰어난 학생들을 발굴하고 육성하기 위한 광범위한 선택 과정을
@@ -218,8 +222,8 @@
               /></span>
               <h3 class="mb-2 text-lg font-semibold">Co-Creation Project</h3>
               <p class="text-gray-600">
-                Co-Creation Project를 통해 실무 경험을 쌓고, 현장파견 프로젝트와
-                집단 교육을 통한 Collective Mentoring을 제공합니다.
+                Collective Mentoring을 통해 실질적인 업무 경험을 얻고, 현장 파견
+                프로젝트를 통해 전문 지식을 심화시킵니다.
               </p>
             </div>
             <div
@@ -257,11 +261,11 @@
                 <span class="italic text-lg mb-2"
                   ><font-awesome-icon
                     :icon="['fas', 'quote-left']"
-                    class="text-gray-400" />
+                    class="text-blue-300" />
                   1. 청년에게는 변화와 성장을
                   <font-awesome-icon
                     :icon="['fas', 'quote-right']"
-                    class="text-gray-400"
+                    class="text-blue-300"
                 /></span>
                 <br />
                 빅리더의 혁신 가드닝 Hub는 청년들에게 새로운 기회와 도전을
@@ -272,11 +276,11 @@
                 <span class="italic text-lg mb-2"
                   ><font-awesome-icon
                     :icon="['fas', 'quote-left']"
-                    class="text-gray-400" />
+                    class="text-blue-300" />
                   2. 기업에게는 성장을
                   <font-awesome-icon
                     :icon="['fas', 'quote-right']"
-                    class="text-gray-400"
+                    class="text-blue-300"
                 /></span>
                 <br />
                 기업은 빅리더의 혁신 가드닝 Hub를 통해 혁신적인 솔루션과 인재를
@@ -287,11 +291,11 @@
                 <span class="italic text-lg mb-2"
                   ><font-awesome-icon
                     :icon="['fas', 'quote-left']"
-                    class="text-gray-400" />
+                    class="text-blue-300" />
                   3. 대학과 빅리더에게는 실적과 역량을
                   <font-awesome-icon
                     :icon="['fas', 'quote-right']"
-                    class="text-gray-400"
+                    class="text-blue-300"
                 /></span>
                 <br />
                 대학과 빅리더는 협력을 통해 현장에서의 실적과 전문 역량을 함께
@@ -301,11 +305,11 @@
                 <span class="italic text-lg mb-2"
                   ><font-awesome-icon
                     :icon="['fas', 'quote-left']"
-                    class="text-gray-400" />
+                    class="text-blue-300" />
                   4. 지자체에는 성공 모델을
                   <font-awesome-icon
                     :icon="['fas', 'quote-right']"
-                    class="text-gray-400"
+                    class="text-blue-300"
                 /></span>
                 <br />
                 빅리더의 혁신 가드닝 Hub는 지자체에게 성공적인 모델을 제공하고
@@ -330,12 +334,12 @@
               <h1 class="text-3xl font-medium mb-2">
                 <font-awesome-icon
                   :icon="['fas', 'quote-left']"
-                  class="text-gray-400"
+                  class="text-blue-300"
                 />
                 빅리더의 혁신 가드닝 HUB
                 <font-awesome-icon
                   :icon="['fas', 'quote-right']"
-                  class="text-gray-400"
+                  class="text-blue-300"
                 />
               </h1>
               <div
@@ -354,7 +358,24 @@
         </div>
       </section>
       <section ref="sec04" id="#sec04">
-        <div class="h-screen">섹션4</div>
+        <div
+          class="relative mt-24 sm:w-3/4 lg:w-9/12 mx-auto border-b flex flex-col justify-center items-center"
+        >
+          <h1 class="text-center text-4xl mb-20">
+            이미 <span class="font-extrabold">102</span>개의 기업이 함께 하고
+            있습니다.
+          </h1>
+
+          <EnterpriseList />
+        </div>
+        <div
+          class="h-[300px] relative mt-24 mb-24 sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
+        >
+          <h1 class="text-center text-4xl font-medium mb-20">
+            모든 것을 바꿀 수 있는 능력, <br />
+            빅리더와 함께 시작하세요.
+          </h1>
+        </div>
       </section>
     </div>
 
@@ -365,6 +386,7 @@
     <script>
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
+import EnterpriseList from "@/components/EnterpriseList.vue";
 import TitleComponent from "@/components/TitleComponent.vue";
 
 export default {
@@ -373,6 +395,7 @@ export default {
     Header,
     Footer,
     TitleComponent,
+    EnterpriseList,
   },
   data() {
     return {

@@ -1,8 +1,4 @@
 <template>
-  <h1 class="text-center text-4xl mb-20">
-    이미 <span class="font-extrabold">102</span>개의 기업이 함께 하고 있습니다.
-  </h1>
-
   <!-- 기업 이미지 컨테이너 -->
   <div class="flex flex-wrap justify-center gap-4 mb-20">
     <!-- 각 기업 이미지 -->

@@ -58,10 +58,10 @@ export default {
           submenu: [
             { to: "/about", label: "빅리더 소개" },
             { to: "/news", label: "뉴스" },
-            { to: "/cocreation", label: "Co-Creation" },
             { to: "/faq", label: "FAQ" },
           ],
         },
+        { to: "/internship", label: "INTERNSHIP" },
         { to: "/projects", label: "PROJECT" },
         { to: "/instructors", label: "INSTRUCTOR" },
         { to: "/review", label: "REVIEW" },
