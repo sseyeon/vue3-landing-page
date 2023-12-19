@@ -1,10 +1,10 @@
 <template>
   <div
-    class="relative overflow-hidden rounded-2xl shadow-lg max-h-[260px] group cursor-pointer mb-8"
+    class="relative overflow-hidden rounded-2xl shadow-lg h-[260px] group cursor-pointer mb-16"
   >
     <img
       class="transition-transform w-full group-hover:scale-110 duration-200"
-      :src="require('@/assets/images/swipe-img-03.jpg')"
+      :src="project.imgSrc"
       alt=""
     />
 
@@ -12,15 +12,19 @@
       class="absolute inset-0 flex items-center bg-gradient-to-t from-black/60 to-transparent"
     >
       <div class="p-4 ml-4 text-white">
-        <div class="font-semibold text-3xl mb-1">스마트수자원관리</div>
-        <div class="text-lg">한국수자원공사</div>
+        <div class="font-semibold text-3xl mb-1">{{ project.project }}</div>
+        <div class="text-lg">{{ project.name }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    project: Object, // 리뷰 정보를 받는 프로퍼티
+  },
+};
 </script>
 
 <style>

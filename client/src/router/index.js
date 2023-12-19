@@ -3,25 +3,27 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import News from "@/views/News.vue";
-import Cocreation from "@/views/Cocreation.vue";
+import Internship from "@/views/Internship.vue";
 import Faq from "@/views/Faq.vue";
 import Instructors from "@/views/Instructors.vue";
 import Projects from "@/views/Projects.vue";
 import Reviews from "@/views/Reviews.vue";
 import Apply from "@/views/Apply.vue";
 import Article from "@/views/Article.vue";
+import InternshipDetail from "@/views/InternshipDetail.vue";
 
 const routes = [
   { path: "/", component: Home },
   { path: "/about", component: About },
   { path: "/news", component: News },
-  { path: "/cocreation", component: Cocreation },
+  { path: "/internship", component: Internship },
   { path: "/faq", component: Faq },
   { path: "/instructors", component: Instructors },
   { path: "/projects", component: Projects },
   { path: "/review", component: Reviews },
   { path: "/apply", component: Apply },
   { path: "/article/:id", component: Article },
+  { path: "/internship/:id", component: InternshipDetail },
 ];
 
 const router = createRouter({
