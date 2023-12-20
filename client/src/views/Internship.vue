@@ -90,7 +90,7 @@ export default {
           id: 8,
           name: "한국산업단지공단",
           project: "산업혁신",
-          imgSrc: require("@/assets/images/partners/Korea_Industrial_Complex_Corporation_1.png"),
+          imgSrc: require("@/assets/images/2023-internship/2023_Korea_Industrial_Complex_Corporation.jpg"),
           link: "https://example.com/news1",
         },
         {

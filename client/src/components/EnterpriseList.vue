@@ -47,7 +47,7 @@
       class="w-1/5 mx-4 mb-8 h-[60px] object-contain"
     />
     <img
-      src="@/assets/images/partners/Korea_ntelligent Information_Society_Agency.png"
+      src="@/assets/images/partners/nia.png"
       class="w-1/5 mx-4 mb-8 h-[60px] object-contain"
     />
     <img

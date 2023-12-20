@@ -25,7 +25,7 @@ export default {
     },
     value: {
       type: [String, Number],
-      default: "option1",
+      default: "2020",
     },
   },
   data() {
