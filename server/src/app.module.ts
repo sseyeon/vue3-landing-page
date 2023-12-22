@@ -6,6 +6,8 @@ import { ReviewDataModule } from './review-data/review-data.module';
 import { ReviewData } from './review-data/entity/review-data.entity';
 import { FaqModule } from './faq/faq.module';
 import { Faq } from './faq/entity/faq.entity';
+import { ReviewVideoDataModule } from './review-video-data/review-video-data.module';
+import { ReviewVideoData } from './review-video-data/entity/review-video-data.entity';
 
 @Module({
   imports: [
@@ -16,11 +18,12 @@ import { Faq } from './faq/entity/faq.entity';
       username: 'bigleader', // 데이터베이스 유저 이름
       password: '1234', // 데이터베이스 비밀번호
       database: 'bigleader', // 데이터베이스 이름
-      entities: [ReviewData, Faq], // 사용할 엔티티
+      entities: [ReviewData, Faq, ReviewVideoData], // 사용할 엔티티
       synchronize: true, // 개발 환경에서만 사용하세요
     }),
     ReviewDataModule,
     FaqModule,
+    ReviewVideoDataModule,
   ],
   controllers: [AppController],
   providers: [AppService],
