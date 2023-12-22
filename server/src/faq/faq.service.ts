@@ -1,5 +1,5 @@
 import { CreateFaqDataDto } from './dto/create-faq-data.dto';
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Faq } from './entity/faq.entity';
 import { Repository } from 'typeorm';
@@ -40,7 +40,7 @@ export class FaqService {
       where: { id },
     });
     if (!faq) {
-      throw new Error(`Faq with ID ${id} not found`);
+      throw new NotFoundException(`Faq with ID ${id} not found`);
     }
 
     return this.faqRepository.delete(id);

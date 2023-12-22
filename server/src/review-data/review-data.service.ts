@@ -1,5 +1,5 @@
 import { CreateReviewDataDto } from './dto/create-review-data.dto';
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ReviewData } from './entity/review-data.entity';
@@ -41,7 +41,7 @@ export class ReviewDataService {
       where: { id },
     });
     if (!reviewData) {
-      throw new Error(`ReviewData with ID ${id} not found`);
+      throw new NotFoundException(`ReviewVideoData with ID ${id} not found`);
     }
     return reviewData;
   }
@@ -51,7 +51,7 @@ export class ReviewDataService {
       where: { id },
     });
     if (!reviewData) {
-      throw new Error(`ReviewData with ID ${id} not found`);
+      throw new NotFoundException(`ReviewVideoData with ID ${id} not found`);
     }
 
     return this.reviewDataRepository.delete(id);
