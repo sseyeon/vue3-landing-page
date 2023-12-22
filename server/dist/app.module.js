@@ -13,6 +13,8 @@ const app_service_1 = require("./app.service");
 const typeorm_1 = require("@nestjs/typeorm");
 const review_data_module_1 = require("./review-data/review-data.module");
 const review_data_entity_1 = require("./review-data/entity/review-data.entity");
+const faq_module_1 = require("./faq/faq.module");
+const faq_entity_1 = require("./faq/entity/faq.entity");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -26,10 +28,11 @@ exports.AppModule = AppModule = __decorate([
                 username: 'bigleader',
                 password: '1234',
                 database: 'bigleader',
-                entities: [review_data_entity_1.ReviewData],
+                entities: [review_data_entity_1.ReviewData, faq_entity_1.Faq],
                 synchronize: true,
             }),
             review_data_module_1.ReviewDataModule,
+            faq_module_1.FaqModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
