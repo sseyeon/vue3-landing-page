@@ -76,10 +76,12 @@ export class ReviewVideoDataService {
    * this function is used to delete ReviewVideoData by id from ReviewVideoData Entity.
    * @param id
    * @returns promise of ReviewVideoData
-   * @throws Error
+   * @throws NotFoundException
    */
   async deleteReviewVideoDataById(id: number): Promise<void> {
-    const reviewVideoData = await this.getReviewVideoDataById(id);
-    await this.reviewVideoData.delete(id);
+    const result = await this.reviewVideoData.delete(id);
+    if (result.affected === 0) {
+      throw new NotFoundException(`ReviewVideoData with ID ${id} not found`);
+    }
   }
 }
