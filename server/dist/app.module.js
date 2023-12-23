@@ -17,6 +17,8 @@ const faq_module_1 = require("./faq/faq.module");
 const faq_entity_1 = require("./faq/entity/faq.entity");
 const review_video_data_module_1 = require("./review-video-data/review-video-data.module");
 const review_video_data_entity_1 = require("./review-video-data/entity/review-video-data.entity");
+const instructor_module_1 = require("./instructor/instructor.module");
+const instructor_entity_1 = require("./instructor/entity/instructor.entity");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -30,12 +32,13 @@ exports.AppModule = AppModule = __decorate([
                 username: 'bigleader',
                 password: '1234',
                 database: 'bigleader',
-                entities: [review_data_entity_1.ReviewData, faq_entity_1.Faq, review_video_data_entity_1.ReviewVideoData],
+                entities: [review_data_entity_1.ReviewData, faq_entity_1.Faq, review_video_data_entity_1.ReviewVideoData, instructor_entity_1.Instructor],
                 synchronize: true,
             }),
             review_data_module_1.ReviewDataModule,
             faq_module_1.FaqModule,
             review_video_data_module_1.ReviewVideoDataModule,
+            instructor_module_1.InstructorModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
