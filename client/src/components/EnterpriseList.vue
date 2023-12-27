@@ -15,7 +15,7 @@
       class="w-1/5 mx-4 mb-8 h-[60px] object-contain"
     />
     <img
-      src="@/assets/images/partners/Health Insurance.png"
+      src="@/assets/images/partners/Health_Insurance.png"
       class="w-1/5 mx-4 mb-8 h-[60px] object-contain"
     />
     <img

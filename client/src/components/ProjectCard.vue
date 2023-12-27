@@ -8,12 +8,12 @@
         class="w-full h-40 mb-4 rounded-md object-contain"
       />
       <!-- 기사 제목 -->
-      <h2 class="text-xl font-semibold text-gray-800 mb-2">
+      <h2
+        class="text-xl font-semibold text-gray-800"
+        :class="{ 'mb-2': isLongTitle, 'mb-10': !isLongTitle }"
+      >
         {{ previousProject.project }}
       </h2>
-
-      <!-- 기사 내용 (예시: 내용이 너무 길면 적절히 자르거나 요약해야 합니다) -->
-      <p class="text-gray-600 mb-4"></p>
 
       <!-- 기사 링크 (예시: 기사의 실제 링크로 대체해야 합니다) -->
       <div class="flex justify-between flex-wrap gap-2 mb-2">
@@ -39,6 +39,12 @@
 export default {
   name: "ProjectCard",
   props: { previousProject: Object },
+  computed: {
+    isLongTitle() {
+      // 'previousProject.project'가 두 줄 이상일 것으로 예상되는 길이 기준 설정
+      return this.previousProject.project.length > 31;
+    },
+  },
 };
 </script>
     

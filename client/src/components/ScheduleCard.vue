@@ -52,7 +52,9 @@
         합숙장소
       </div>
       <div class="flex flex-col pb-10 border-b border-[#C7D2D8] w-[75%]">
-        <div class="text-[14px] text-[#3A3E41] lg:text-[16px]">경희대학교</div>
+        <div class="text-[14px] text-[#3A3E41] lg:text-[16px]">
+          경희대학교 평화복지대학원 기숙사 (경기도 광릉 소재)
+        </div>
       </div>
     </div>
     <div class="flex pt-5">
@@ -77,11 +79,11 @@
       >
         운영진
       </div>
-      <div class="flex flex-col pb-10 border-b border-[#C7D2D8] w-[75%]">
+      <div class="flex flex-col pb-10 border-b w-[75%]">
         <div class="text-[14px] text-[#3A3E41] lg:text-[16px] leading-7">
-          전종식(청년AI혁신가드닝 프로그램 책임교수)<br />
-          김성은(빅리더 대표)<br />
-          이상화(서울대학교 교수)
+          전종식 (청년AI혁신가드닝 프로그램 책임교수)<br />
+          김성은 (빅리더 대표)<br />
+          이상화 (서울대학교 교수)
         </div>
       </div>
     </div>

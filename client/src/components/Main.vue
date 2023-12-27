@@ -20,9 +20,9 @@
             <h1 class="text-4xl font-bold mb-4" v-html="item.title"></h1>
             <p class="text-lg mb-4" v-html="item.description"></p>
             <div class="flex justify-center flex-wrap gap-2">
-              <button type="button" class="btn btn-primary">
+              <a :href="item.link" target="_blank" class="btn btn-primary">
                 {{ item.buttonText }}
-              </button>
+              </a>
               <!-- <button type="button" class="btn btn-outline-primary">
                 Review
               </button> -->
@@ -82,6 +82,7 @@ export default {
           title: "한국고용정보원, <br />‘빅리더 프로젝트 인턴십 프로그램’ 진행",
           description: "실무 중심 프로젝트로 경력개발 준비까지",
           buttonText: "보도자료 보기",
+          link: "https://www.econonews.co.kr/news/articleView.html?idxno=302495",
         },
         {
           image: require("@/assets/images/swipe-img-02.jpg"),
@@ -89,12 +90,14 @@ export default {
           description:
             "빅리더를 통해 전공자 뿐만 아니라  <br />비전공자인 문과생도 AI 분야에 원하는 좋은 취업을 하는 방법 🏄🏻‍♂️",
           buttonText: "영상 보기",
+          link: "https://www.youtube.com/watch?v=RdlyNIsoyVs",
         },
         {
           image: require("@/assets/images/swipe-img-03.jpg"),
           title: "AI 취업 A to Z : 평범에서 비범으로",
           description: "2023 빅리더 토크콘서트",
           buttonText: "자세히 보기",
+          link: "https://www.youtube.com/watch?v=Ag2ratMpkdo",
         },
       ],
     };

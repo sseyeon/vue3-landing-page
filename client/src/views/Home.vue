@@ -19,7 +19,7 @@
       </div>
       <!-- 기업 목록 섹션 -->
       <div
-        class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-lg mt-16"
+        class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-lg mt-16"
       >
         <!-- 기업 목록을 페이징하여 보여주기 -->
         <Enterprise
@@ -37,7 +37,7 @@
         >
           <font-awesome-icon :icon="['fas', 'circle-chevron-left']" />
         </button>
-        <span class="mx-4">{{ currentPage }} / 2</span>
+        <span class="mx-4">{{ currentPage }} / 3</span>
         <button
           @click="nextPage"
           :disabled="currentPage === totalPages"
@@ -162,10 +162,14 @@
           빅리더와 함께 시작하세요.
         </h1>
         <div class="flex justify-center flex-wrap gap-2">
-          <button type="button" class="btn btn-outline-primary">
+          <router-link to="apply" class="btn btn-outline-primary">
             지원하기
             <font-awesome-icon :icon="['fas', 'fa-paper-plane']" />
-          </button>
+          </router-link>
+          <!-- <button type="button" class="btn btn-outline-primary">
+            지원하기
+            <font-awesome-icon :icon="['fas', 'fa-paper-plane']" />
+          </button> -->
         </div>
       </div>
     </section>
@@ -288,86 +292,124 @@ export default {
       enterpriseData: [
         {
           id: 1,
-          name: "한국관광공사",
-          project: "지역 소멸 및 인구 감소 대응",
-          imgSrc: require("@/assets/images/partners/Korea_Tourism_Organization.png"),
-          link: "https://example.com/news1",
-        },
-        {
-          id: 2,
-          name: "건강보험심사평가원",
-          project: "Healthcare",
-          imgSrc: require("@/assets/images/partners/Health Insurance.png"),
-          link: "https://example.com/news1",
-        },
-        {
-          id: 3,
-          name: "한국수자원공사",
-          project: "스마트수자원관리",
-          imgSrc: require("@/assets/images/partners/Korea_Water_Resources_Corporation_1.png"),
-          link: "https://example.com/news1",
-        },
-        {
-          id: 4,
-          name: "국립공원공단",
-          project: "스마트 ECO",
-          imgSrc: require("@/assets/images/partners/National_Parks.png"),
-          link: "https://example.com/news1",
-        },
-        {
-          id: 5,
-          name: "세아베스틸",
-          project: "AI 소재",
-          imgSrc: require("@/assets/images/partners/Ceabestil.png"),
-          link: "https://example.com/news1",
-        },
-        {
-          id: 6,
-          name: "세아창원특수강",
-          project: "공정혁신",
-          imgSrc: require("@/assets/images/partners/Seachangwon_Specialty_Course.png"),
-          link: "https://example.com/news1",
-        },
-        {
-          id: 7,
-          name: "대한무역투자진흥공사",
-          project: "스마트 무역",
-          imgSrc: require("@/assets/images/partners/kotra_1.png"),
-          link: "https://example.com/news1",
-        },
-        {
-          id: 8,
-          name: "한국산업단지공단",
-          project: "산업혁신",
-          imgSrc: require("@/assets/images/partners/Korea_Industrial_Complex_Corporation_1.png"),
-          link: "https://example.com/news1",
-        },
-        {
-          id: 9,
-          name: "한국고용정보원, 근로복지공단",
-          project: "스마트고용",
-          imgSrc: require("@/assets/images/partners/Korea_Employment_Information_Center.png"),
-          link: "https://example.com/news1",
-        },
-        {
-          id: 10,
-          name: "사회보장정보원",
-          project: "국민행복 서비스",
+          name: "한국사회보장정보원",
+          project:
+            "생성형 Al를 활용한 나에게 힘이 되는 AI 복지 서비스 개발 프로젝트",
           imgSrc: require("@/assets/images/partners/Korea_Social_Security_Administration.png"),
           link: "https://example.com/news1",
         },
         {
+          id: 2,
+          name: "KOTRA",
+          project:
+            "무역 생태계 활성화를 위한 양방향 HS CODE 매칭 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/kotra_1.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 3,
+          name: "(주) 대상",
+          project:
+            "간장 제조 Cost 절감을 위한 인사이트 도출 및 품질 예측 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/daesang.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 4,
+          name: "(주) 코데이터솔루션",
+          project:
+            "ESG 진단지표를 활용한 생성형 AI 기반 ESG 컨설팅 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/kodata.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 5,
+          name: "한국고용정보원",
+          project: "청년 정책 혜택 알리미 맞춤형 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Korea_Employment_Information_Center.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 6,
+          name: "한국수자원공사",
+          project: "수처리 약품 주입 최적화 모델링 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Korea_Water_Resources_Corporation_1.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 7,
+          name: "한국산업단지공단",
+          project:
+            "한국산업단지공단 입주기업 ESG 경영시급도 모델링 및 현황 모니터링 대시보드 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Korea_Industrial_Complex_Corporation_1.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 8,
+          name: "(주)세아베스틸",
+          project:
+            "생성형 AI를 활용한 수주규격 검토 자동화 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Ceabestil.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 9,
+          name: "(주)세아베스틸",
+          project:
+            "대형 압연 Hot Saw Burr 이미지 비전 판독 기술 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Ceabestil.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 10,
+          name: "(주)세아창원특수강",
+          project: "스테인리스 선재(Wire Rod) 물성 예측 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Seachangwon_Specialty_Course.png"),
+          link: "https://example.com/news1",
+        },
+        {
           id: 11,
-          name: "SpringCloud,SOS LAB",
-          project: "농촌형 모빌리티",
-          imgSrc: require("@/assets/images/partners/SpringCloud.png"),
+          name: "(주)세아창원특수강",
+          project: "스테인리스 봉강(Round Bar) 물성예측 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Seachangwon_Specialty_Course.png"),
           link: "https://example.com/news1",
         },
         {
           id: 12,
-          name: "한국평가데이터",
-          project: "ESG",
-          imgSrc: require("@/assets/images/partners/kodata.png"),
+          name: "근로복지공단",
+          project:
+            "신속한 사고 처리를 위한 AI 기반 업무상 재해 처리 지원 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Social_Security_Administration.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 13,
+          name: "근로복지공단",
+          project:
+            "재해조사 담당자의 업무 효율화를 위한 유사 판정서 추천 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Social_Security_Administration.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 14,
+          name: "건강보험심사평가원",
+          project:
+            "만성질환자 (당뇨병, 고혈압) 선제대응 예측 및 내 주변 우수병원 추천 AI서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/Health_Insurance.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 15,
+          name: "국립공원공단",
+          project: "누리호 위성 데이터를 활용한 변화탐지 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/National_Parks.png"),
+          link: "https://example.com/news1",
+        },
+        {
+          id: 16,
+          name: "국립공원공단",
+          project: "생성형 AI 활용국립공원 탐방 서비스 개발 프로젝트",
+          imgSrc: require("@/assets/images/partners/National_Parks.png"),
           link: "https://example.com/news1",
         },
       ],

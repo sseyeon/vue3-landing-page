@@ -1,7 +1,7 @@
 <!-- src/components/EnterpriseCard.vue -->
 <template>
-  <div class="flex flex-col shadow-md max-h-[288px] bg-white rounded-lg">
-    <div class="p-6 flex flex-col items-center h-[206px]">
+  <div class="flex flex-col shadow-md max-h-[320px] bg-white rounded-lg">
+    <div class="p-6 flex flex-col items-center h-[206px] mb-6">
       <img
         :src="enterprise.imgSrc"
         class="h-[74px] w-full object-contain"

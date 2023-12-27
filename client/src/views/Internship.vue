@@ -48,7 +48,7 @@ export default {
           id: 2,
           name: "건강보험심사평가원",
           project: "Healthcare",
-          imgSrc: require("@/assets/images/partners/Health Insurance.png"),
+          imgSrc: require("@/assets/images/partners/Health_Insurance.png"),
           link: "https://example.com/news1",
         },
         {
