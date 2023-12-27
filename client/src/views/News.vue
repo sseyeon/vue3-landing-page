@@ -34,7 +34,7 @@
     </div>
     <!-- Display news based on the selected category -->
     <div
-      class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16 max-w-screen-lg mt-4 mb-16"
+      class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-screen-lg mt-4 mb-16"
     >
       <PreviewCard
         v-for="newsItem in filteredNews"

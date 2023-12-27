@@ -9,11 +9,23 @@
           본 사이트의 콘텐츠는 저작권법의 보호를 받는 바 무단 전재, 복사, 배포
           등을 금합니다.
         </p>
-        <p>Copyright &copy; BIGLEADER All Rights Reserved.</p>
+        <p>
+          Copyright &copy; BIGLEADER All Rights Reserved.
+          <router-link to="/admin" class="mr-4">
+            <font-awesome-icon
+              :icon="['fas', 'user-lock']"
+              style="color: #000"
+            />
+          </router-link>
+        </p>
       </div>
     </div>
     <div class="footer-right pr-10">
-      <a href="https://www.youtube.com/" target="_blank" class="mr-4">
+      <a
+        href="https://www.youtube.com/@big_leader"
+        target="_blank"
+        class="mr-4"
+      >
         <font-awesome-icon
           :icon="['fab', 'youtube']"
           style="color: #e71304; font-size: 1.5rem"

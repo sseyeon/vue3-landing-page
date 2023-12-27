@@ -10,6 +10,20 @@
 *:after {
   transition: ease-in-out 0.15s; /* 여기는 트랜지션 지속 시간입니다. 필요에 따라 조절 가능합니다. */
 }
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fab,
+.fa:before,
+.fas:before,
+.far:before,
+.fal:before,
+.fad:before,
+.fab:before {
+  transition: none;
+}
 @layer components {
   .btn {
     @apply py-1 px-3 text-base rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75;

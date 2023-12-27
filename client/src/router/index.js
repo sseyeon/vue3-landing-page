@@ -24,6 +24,15 @@ const routes = [
   { path: "/apply", component: Apply },
   { path: "/article/:id", component: Article },
   { path: "/internship/:id", component: InternshipDetail },
+  { path: "/admin", component: () => import("@/views/admin/Admin.vue") },
+  {
+    path: "/admin/signup",
+    component: () => import("@/views/admin/SignUp.vue"),
+  },
+  {
+    path: "/admin/dashboard",
+    component: () => import("@/views/admin/Dashboard.vue"),
+  },
 ];
 
 const router = createRouter({
