@@ -30,9 +30,21 @@ const routes = [
     component: () => import("@/views/admin/SignUp.vue"),
   },
   {
-    path: "/admin/dashboard",
-    component: () => import("@/views/admin/Dashboard.vue"),
+    path: "/admin/news-management",
+    component: () => import("@/views/admin/NewsManagement.vue"),
   },
+  {
+    path: "/admin/swipe-contents",
+    component: () => import("@/views/admin/SwipeContentManagement.vue"),
+  },
+  {
+    path: "/admin/project-management",
+    component: () => import("@/views/admin/ProjectManagement.vue"),
+  },
+  // {
+  //   path: "/admin/graduates-management",
+  //   component: () => import("@/views/admin/GraduatesManagement.vue"),
+  // },
 ];
 
 const router = createRouter({

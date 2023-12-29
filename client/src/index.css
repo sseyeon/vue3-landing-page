@@ -37,4 +37,13 @@
   .btn-outline-primary {
     @apply border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white focus:ring-blue-400;
   }
+  .btn-danger {
+    @apply bg-red-500 text-white hover:bg-red-600 focus:ring-red-400;
+  }
+  .btn-sm {
+    padding: 5px 10px; /* 상하 패딩 5px, 좌우 패딩 10px */
+    font-size: 0.875rem; /* 폰트 크기 */
+    line-height: 1.5; /* 줄 높이 */
+    cursor: pointer; /* 커서 스타일 */
+  }
 }
