@@ -24,6 +24,11 @@
 .fab:before {
   transition: none;
 }
+
+table th {
+  white-space: nowrap;
+}
+
 @layer components {
   .btn {
     @apply py-1 px-3 text-base rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-opacity-75;

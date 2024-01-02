@@ -41,10 +41,14 @@ const routes = [
     path: "/admin/project-management",
     component: () => import("@/views/admin/ProjectManagement.vue"),
   },
-  // {
-  //   path: "/admin/graduates-management",
-  //   component: () => import("@/views/admin/GraduatesManagement.vue"),
-  // },
+  {
+    path: "/admin/graduates-management",
+    component: () => import("@/views/admin/GraduatesManagement.vue"),
+  },
+  {
+    path: "/admin/graduates-management-video",
+    component: () => import("@/views/admin/GraduatesVideoManagement.vue"),
+  },
 ];
 
 const router = createRouter({
@@ -61,6 +65,10 @@ const router = createRouter({
   },
 });
 router.beforeEach((to, from, next) => {
+  if (to.path.startsWith("/admin")) {
+    next();
+    return;
+  }
   // Botpress 웹챗 초기화
   if (!window.botpressWebChat.isInitialized) {
     window.botpressWebChat.init({

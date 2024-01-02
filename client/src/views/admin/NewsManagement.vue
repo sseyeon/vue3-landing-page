@@ -5,26 +5,15 @@
     <div class="w-full h-full bg-gray-400">
       <Header titleText="뉴스 게시판 관리" />
       <div class="h-[calc(100vh-50px)] bg-white p-6 overflow-auto">
-        <div
-          class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-screen-lg mt-4 mb-4"
-        >
+        <div class="container grid grid-cols-1 max-w-screen-lg mt-4 mb-4">
           <div
             class="bg-white rounded-lg border border-[#e4e4e5] mb-4 relative overflow-hidden"
           >
             <div class="w-full flex justify-center items-center">
-              <img src="https://picsum.photos/200/300" />
-            </div>
-          </div>
-          <div
-            class="bg-white rounded-lg border border-[#e4e4e5] mb-4 relative overflow-hidden"
-          >
-            <div class="w-full flex justify-center items-center">
-              <img src="https://picsum.photos/200/300" />
+              <img src="@/assets/images/bigleader-admin/news.png" />
             </div>
           </div>
         </div>
-        <NewsEditor />
-
         <div class="flex justify-between items-center mb-4">
           <p>
             <font-awesome-icon
@@ -35,43 +24,23 @@
           </p>
           <button class="btn btn-outline-primary btn-sm">+ 뉴스 추가</button>
         </div>
-        <table class="min-w-full bg-white border border-gray-300 table-auto">
-          <thead class="bg-gray-100">
-            <tr>
-              <th class="px-4 py-2 text-left text-gray-600">ID</th>
-              <th class="px-4 py-2 text-left text-gray-600">카테고리</th>
-              <th class="px-4 py-2 text-left text-gray-600">타이틀</th>
-              <th class="px-4 py-2 text-left text-gray-600">컨텐츠</th>
-              <th class="px-4 py-2 text-left text-gray-600">날짜</th>
-              <th class="px-4 py-2 text-left text-gray-600">관리</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="news in newsData" :key="news.id">
-              <td class="border px-3 py-1">{{ news.id }}</td>
-              <td class="border px-3 py-1">{{ news.category }}</td>
-              <td class="border px-3 py-1">{{ news.title }}</td>
-              <td class="border px-3 py-1">
-                {{ truncateText(news.content, 20) }}
-              </td>
-              <td class="border px-3 py-1">{{ news.createdAt }}</td>
-              <td class="border px-3 py-1">
-                <button
-                  class="btn btn-sm btn-primary mr-2"
-                  @click="editNews(news.id)"
-                >
-                  수정
-                </button>
-                <button
-                  class="btn btn-sm btn-danger"
-                  @click="deleteNews(news.id)"
-                >
-                  삭제
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <Table
+          :theadData="theadData"
+          :tbodyData="truncatedNewsData"
+          :displayedKeys="displayedKeys"
+        >
+          <template v-slot:manage="{ item }">
+            <button
+              class="btn btn-sm btn-primary mr-2"
+              @click="editNews(item.id)"
+            >
+              수정
+            </button>
+            <button class="btn btn-sm btn-danger" @click="deleteNews(item.id)">
+              삭제
+            </button>
+          </template>
+        </Table>
       </div>
     </div>
   </div>
@@ -81,16 +50,18 @@
 import Sidebar from "@/components/layout/admin/Sidebar.vue";
 import Header from "@/components/layout/admin/Header.vue";
 import NewsEditor from "./NewsEditor.vue";
+import Table from "@/components/Table.vue";
 export default {
   name: "NewsManagement",
   components: {
     Sidebar,
     Header,
+    Table,
     // NewsEditor,
   },
   data() {
     return {
-      // 실제 데이터로 대체해야 합니다.
+      theadData: ["ID", "카테고리", "타이틀", "컨텐츠", "날짜", "관리"],
       newsData: [
         {
           id: 1,
@@ -125,10 +96,33 @@ export default {
           link: "http://www.gndomin.com/news/photo/202109/287757_281159_4834.jpg",
         },
       ],
-      activeCategory: "all", // 현재 선택된 카테고리
+      displayedKeys: ["id", "category", "title", "content", "createdAt"],
     };
   },
+  computed: {
+    truncatedNewsData() {
+      return this.newsData.map((news) => ({
+        ...news,
+        title: this.truncateText(news.content, 20), // 예시로 10글자로 제한
+        content: this.truncateText(news.content, 30), // 예시로 100글자로 제한
+      }));
+    },
+  },
+  created() {
+    this.fetchNewsData();
+  },
   methods: {
+    async fetchNewsData() {
+      try {
+        const response = await fetch(`${process.env.VUE_APP_API_URL}/news`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        this.newsData = await response.json();
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    },
     // 텍스트를 일정 길이로 자르는 메소드
     truncateText(text, maxLength) {
       if (text.length > maxLength) {
@@ -138,18 +132,24 @@ export default {
     },
     async editNews(id) {
       // Logic to call PUT API
-      const response = await fetch(`http://localhost:3000/news/${id}`, {
-        method: "PUT",
-        // Additional request configurations (headers, body, etc.)
-      });
+      const response = await fetch(
+        `${process.env.VUE_APP_API_URL}/news/${id}`,
+        {
+          method: "PUT",
+          // Additional request configurations (headers, body, etc.)
+        }
+      );
       // Handle the response
     },
     async deleteNews(id) {
       // Logic to call DELETE API
-      const response = await fetch(`http://localhost:3000/news/${id}`, {
-        method: "DELETE",
-        // Additional request configurations (headers, body, etc.)
-      });
+      const response = await fetch(
+        `${process.env.VUE_APP_API_URL}/news/${id}`,
+        {
+          method: "DELETE",
+          // Additional request configurations (headers, body, etc.)
+        }
+      );
       // Handle the response
     },
   },
