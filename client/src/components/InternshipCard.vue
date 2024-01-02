@@ -13,7 +13,7 @@
     >
       <div class="p-4 ml-4 text-white">
         <div class="font-semibold text-3xl mb-1">{{ project.project }}</div>
-        <div class="text-lg">{{ project.name }}</div>
+        <div class="text-lg">{{ project.partner }}</div>
       </div>
     </div>
   </div>

@@ -11,7 +11,7 @@
         💡 {{ enterprise.project }}
       </h3>
 
-      <p class="mb-2 text-gray-600 font-light">{{ enterprise.name }}</p>
+      <p class="mb-2 text-gray-600 font-light">{{ enterprise.partner }}</p>
     </div>
     <hr class="border-b text-gray-50" />
     <div class="flex p-6">
