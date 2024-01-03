@@ -63,7 +63,7 @@
             </div>
             <!-- Content -->
             <div class="flex flex-1 flex-col items-center lg:items-start">
-              <h1 class="text-3xl font-medium">Making Social Good Tree</h1>
+              <h1 class="text-3xl font-semibold">Ordinary to Extraordinary</h1>
               <p
                 class="text-lg my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
               >
@@ -126,7 +126,7 @@
             </div>
             <!-- Content -->
             <div class="flex flex-1 flex-col items-center lg:items-start">
-              <h1 class="text-3xl font-medium">Growth를 통한 가치 창출</h1>
+              <h1 class="text-3xl font-semibold">Growth를 통한 가치 창출</h1>
               <p
                 class="text-gray-600 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
               >
@@ -153,7 +153,7 @@
             </div>
             <!-- Content -->
             <div class="flex flex-1 flex-col items-center lg:items-start">
-              <h1 class="text-3xl font-medium">격이 다른 커리큘럼</h1>
+              <h1 class="text-3xl font-semibold">격이 다른 커리큘럼</h1>
               <p
                 class="text-lg my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
               >
@@ -246,82 +246,7 @@
         </div>
         <!-- Feature #4 -->
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-12 border-b">
-          <div
-            class="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-16 mb-24"
-          >
-            <!-- Content -->
-            <div class="flex flex-1 flex-col items-center lg:items-start">
-              <h1 class="text-3xl font-medium mb-2">
-                다양한 참여자들에게 제공되는 가치
-              </h1>
-              <p
-                class="text-gray-600 my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
-              ></p>
-              <p class="mb-8">
-                <span class="italic text-lg mb-2"
-                  ><font-awesome-icon
-                    :icon="['fas', 'quote-left']"
-                    class="text-blue-300" />
-                  1. 청년에게는 변화와 성장을
-                  <font-awesome-icon
-                    :icon="['fas', 'quote-right']"
-                    class="text-blue-300"
-                /></span>
-                <br />
-                빅리더의 혁신 가드닝 Hub는 청년들에게 새로운 기회와 도전을
-                제공하며, 지속적인 변화와 성장을 촉진합니다.
-              </p>
-
-              <p class="mb-8">
-                <span class="italic text-lg mb-2"
-                  ><font-awesome-icon
-                    :icon="['fas', 'quote-left']"
-                    class="text-blue-300" />
-                  2. 기업에게는 성장을
-                  <font-awesome-icon
-                    :icon="['fas', 'quote-right']"
-                    class="text-blue-300"
-                /></span>
-                <br />
-                기업은 빅리더의 혁신 가드닝 Hub를 통해 혁신적인 솔루션과 인재를
-                발굴하여 성과를 창출할 수 있습니다.
-              </p>
-
-              <p class="mb-8">
-                <span class="italic text-lg mb-2"
-                  ><font-awesome-icon
-                    :icon="['fas', 'quote-left']"
-                    class="text-blue-300" />
-                  3. 대학과 빅리더에게는 실적과 역량을
-                  <font-awesome-icon
-                    :icon="['fas', 'quote-right']"
-                    class="text-blue-300"
-                /></span>
-                <br />
-                대학과 빅리더는 협력을 통해 현장에서의 실적과 전문 역량을 함께
-                키우며, 산학협력을 통한 지속적인 발전을 이룹니다.
-              </p>
-              <p class="mb-8">
-                <span class="italic text-lg mb-2"
-                  ><font-awesome-icon
-                    :icon="['fas', 'quote-left']"
-                    class="text-blue-300" />
-                  4. 지자체에는 성공 모델을
-                  <font-awesome-icon
-                    :icon="['fas', 'quote-right']"
-                    class="text-blue-300"
-                /></span>
-                <br />
-                빅리더의 혁신 가드닝 Hub는 지자체에게 성공적인 모델을 제공하고
-                지역사회의 발전에 기여합니다.
-              </p>
-              <p class="mt-2">
-                이처럼, 빅리더는 혁신과 협력을 기반으로 한 가치 창출을 통해
-                다양한 이해관계자들에게 긍정적인 영향을 미치고, 미래를 새롭게
-                이끌어가는 역할을 수행합니다.
-              </p>
-            </div>
-          </div>
+          <About01 />
         </div>
       </section>
       <section ref="sec03" id="#sec03">
@@ -331,7 +256,7 @@
           >
             <!-- Content -->
             <div class="flex flex-1 flex-col items-center lg:items-start">
-              <h1 class="text-3xl font-medium mb-2">
+              <h1 class="text-3xl font-semibold mb-2">
                 <font-awesome-icon
                   :icon="['fas', 'quote-left']"
                   class="text-blue-300"
@@ -365,29 +290,28 @@
             이미 <span class="font-extrabold">102</span>개의 기업이 함께 하고
             있습니다.
           </h1>
-
           <EnterpriseList />
         </div>
+      </section>
+      <section ref="sec05" id="#sec05">
         <div
-          class="h-[300px] relative mt-24 mb-24 sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
+          class="relative sm:w-3/4 lg:w-9/12 mx-auto border-b flex flex-col justify-center items-center"
         >
-          <h1 class="text-center text-4xl font-medium mb-20">
-            모든 것을 바꿀 수 있는 능력, <br />
-            빅리더와 함께 시작하세요.
-          </h1>
+          <CompanyReviewCard />
         </div>
       </section>
     </div>
-
     <Footer />
   </div>
 </template>
     
     <script>
-import Header from "@/components/layout/Header.vue";
-import Footer from "@/components/layout/Footer.vue";
-import EnterpriseList from "@/components/EnterpriseList.vue";
-import TitleComponent from "@/components/TitleComponent.vue";
+import Header from "@/components/layout/Header.vue"
+import Footer from "@/components/layout/Footer.vue"
+import EnterpriseList from "@/components/EnterpriseList.vue"
+import TitleComponent from "@/components/TitleComponent.vue"
+import CompanyReviewCard from "@/components/CompanyReviewCard.vue"
+import About01 from "@/components/About01.vue"
 
 export default {
   name: "About",
@@ -396,28 +320,30 @@ export default {
     Footer,
     TitleComponent,
     EnterpriseList,
+    CompanyReviewCard,
+    About01,
   },
   data() {
     return {
       activeCategory: "sec01",
       isActive: false,
-    };
+    }
   },
   methods: {
     changeCategory(category) {
-      const sectionRef = this.$refs[category];
-      sectionRef.scrollIntoView({ behavior: "smooth" });
-      this.activeCategory = category;
+      const sectionRef = this.$refs[category]
+      sectionRef.scrollIntoView({ behavior: "smooth" })
+      this.activeCategory = category
     },
     handleScroll() {
-      this.isActive = window.scrollY > 100;
+      this.isActive = window.scrollY > 100
     },
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll)
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll)
   },
-};
+}
 </script>

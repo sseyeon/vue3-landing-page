@@ -5,7 +5,7 @@
   >
     <nav class="container flex items-start py-4 mt-2 md:mt-3">
       <div class="flex-1">
-        <router-link to="/" class="text-2xl font-bold text-gray-800"
+        <router-link to="/" class="inline-flex text-2xl font-bold text-gray-800"
           ><img class="h-8" src="@/assets/images/logon_bl.png"
         /></router-link>
       </div>
@@ -43,8 +43,8 @@
 </template>
 
 <script>
-import MenuItem from "@/components/layout/MenuItem.vue";
-import MobileMenu from "@/components/layout/MobileMenu.vue";
+import MenuItem from "@/components/layout/MenuItem.vue"
+import MobileMenu from "@/components/layout/MobileMenu.vue"
 
 export default {
   name: "Header",
@@ -68,16 +68,16 @@ export default {
         { to: "/apply", label: "APPLY" },
         { to: "", label: "LMS" },
       ],
-    };
+    }
   },
   methods: {
     toggleMobileMenu() {
-      this.mobileMenuOpen = !this.mobileMenuOpen;
+      this.mobileMenuOpen = !this.mobileMenuOpen
     },
   },
   components: {
     MenuItem,
     MobileMenu,
   },
-};
+}
 </script>
