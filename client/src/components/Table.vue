@@ -61,19 +61,19 @@ export default {
     return {
       currentPage: 1,
       itemsPerPage: 10,
-    };
+    }
   },
   computed: {
     paginatedData() {
-      const start = (this.currentPage - 1) * this.itemsPerPage;
-      const end = start + this.itemsPerPage;
-      return this.tbodyData.slice(start, end);
+      const start = (this.currentPage - 1) * this.itemsPerPage
+      const end = start + this.itemsPerPage
+      return this.tbodyData.slice(start, end)
     },
     pageCount() {
-      return Math.ceil(this.tbodyData.length / this.itemsPerPage);
+      return Math.ceil(this.tbodyData.length / this.itemsPerPage)
     },
   },
-};
+}
 </script>
 
 <style>

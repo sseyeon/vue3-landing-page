@@ -41,23 +41,24 @@
             </button>
           </template>
         </Table>
+        <Tiptap />
       </div>
     </div>
   </div>
 </template>
   
   <script>
-import Sidebar from "@/components/layout/admin/Sidebar.vue";
-import Header from "@/components/layout/admin/Header.vue";
-import NewsEditor from "./NewsEditor.vue";
-import Table from "@/components/Table.vue";
+import Sidebar from "@/components/layout/admin/Sidebar.vue"
+import Header from "@/components/layout/admin/Header.vue"
+import Table from "@/components/Table.vue"
+import Tiptap from "@/components/Tiptap.vue"
 export default {
   name: "NewsManagement",
   components: {
     Sidebar,
     Header,
     Table,
-    // NewsEditor,
+    Tiptap,
   },
   data() {
     return {
@@ -97,38 +98,38 @@ export default {
         },
       ],
       displayedKeys: ["id", "category", "title", "content", "createdAt"],
-    };
+    }
   },
   computed: {
     truncatedNewsData() {
-      return this.newsData.map((news) => ({
+      return this.newsData.map(news => ({
         ...news,
         title: this.truncateText(news.content, 20), // 예시로 10글자로 제한
         content: this.truncateText(news.content, 30), // 예시로 100글자로 제한
-      }));
+      }))
     },
   },
   created() {
-    this.fetchNewsData();
+    this.fetchNewsData()
   },
   methods: {
     async fetchNewsData() {
       try {
-        const response = await fetch(`${process.env.VUE_APP_API_URL}/news`);
+        const response = await fetch(`${process.env.VUE_APP_API_URL}/news`)
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Network response was not ok")
         }
-        this.newsData = await response.json();
+        this.newsData = await response.json()
       } catch (error) {
-        console.error("Fetch error:", error);
+        console.error("Fetch error:", error)
       }
     },
     // 텍스트를 일정 길이로 자르는 메소드
     truncateText(text, maxLength) {
       if (text.length > maxLength) {
-        return text.slice(0, maxLength) + "...";
+        return text.slice(0, maxLength) + "..."
       }
-      return text;
+      return text
     },
     async editNews(id) {
       // Logic to call PUT API
@@ -138,7 +139,7 @@ export default {
           method: "PUT",
           // Additional request configurations (headers, body, etc.)
         }
-      );
+      )
       // Handle the response
     },
     async deleteNews(id) {
@@ -149,11 +150,11 @@ export default {
           method: "DELETE",
           // Additional request configurations (headers, body, etc.)
         }
-      );
+      )
       // Handle the response
     },
   },
-};
+}
 </script>
   
   <style>
