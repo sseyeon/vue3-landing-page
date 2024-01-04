@@ -1,6 +1,10 @@
 <!-- src/components/MenuItem.vue -->
 <template>
-  <div class="relative" @click="handleMenuClick">
+  <div
+    class="relative"
+    @click="handleMenuClick"
+    v-click-outside="onClickOutside"
+  >
     <router-link
       v-if="to && !submenu"
       :to="to"
@@ -30,6 +34,8 @@
 </template>
 
 <script>
+import vClickOutside from "click-outside-vue3"
+
 export default {
   props: {
     to: String,
@@ -39,21 +45,30 @@ export default {
   data() {
     return {
       isSubmenuVisible: false,
-    };
+    }
   },
+  directives: {
+    clickOutside: vClickOutside.directive,
+  },
+
   methods: {
     handleMenuClick() {
       if (this.label === "About BIGLEADER") {
         // About BIGLEADER 메뉴인 경우 드롭다운 토글
-        this.isSubmenuVisible = !this.isSubmenuVisible;
+        this.isSubmenuVisible = !this.isSubmenuVisible
       } else if (this.label === "LMS") {
         // "LMS" 메뉴인 경우 naver.com으로 이동
-        window.location.href = "https://bigleader.first10.co.kr/";
+        window.location.href = "https://bigleader.first10.co.kr/"
       } else if (this.to) {
         // 페이지 이동이 필요한 경우에만 페이지 이동
-        this.$router.push(this.to);
+        this.$router.push(this.to)
+      }
+    },
+    onClickOutside(event) {
+      if (this.isSubmenuVisible) {
+        this.isSubmenuVisible = false
       }
     },
   },
-};
+}
 </script>

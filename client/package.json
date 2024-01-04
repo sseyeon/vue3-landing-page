@@ -21,6 +21,7 @@
     "@tiptap/starter-kit": "^2.1.13",
     "@tiptap/vue-3": "^2.1.13",
     "bxslider": "^4.2.14",
+    "click-outside-vue3": "^4.0.1",
     "core-js": "^3.8.3",
     "jquery": "^3.7.1",
     "swiper": "^11.0.5",
