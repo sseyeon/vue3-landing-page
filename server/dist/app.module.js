@@ -19,12 +19,17 @@ const review_video_data_module_1 = require("./review-video-data/review-video-dat
 const review_video_data_entity_1 = require("./review-video-data/entity/review-video-data.entity");
 const instructor_module_1 = require("./instructor/instructor.module");
 const instructor_entity_1 = require("./instructor/entity/instructor.entity");
+const email_module_1 = require("./email/email.module");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+            }),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
                 host: 'localhost',
@@ -39,6 +44,7 @@ exports.AppModule = AppModule = __decorate([
             faq_module_1.FaqModule,
             review_video_data_module_1.ReviewVideoDataModule,
             instructor_module_1.InstructorModule,
+            email_module_1.EmailModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

@@ -10,9 +10,14 @@ import { ReviewVideoDataModule } from './review-video-data/review-video-data.mod
 import { ReviewVideoData } from './review-video-data/entity/review-video-data.entity';
 import { InstructorModule } from './instructor/instructor.module';
 import { Instructor } from './instructor/entity/instructor.entity';
+import { EmailModule } from './email/email.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true, // 이 옵션으로 모든 모듈에서 ConfigService 사용 가능
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql', // 데이터베이스 타입
       host: 'localhost', // 호스트 주소
@@ -27,6 +32,7 @@ import { Instructor } from './instructor/entity/instructor.entity';
     FaqModule,
     ReviewVideoDataModule,
     InstructorModule,
+    EmailModule,
   ],
   controllers: [AppController],
   providers: [AppService],

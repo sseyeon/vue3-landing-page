@@ -357,13 +357,32 @@
             <h1 class="text-3xl text-center font-semibold">
               Join us in what we're doing!
             </h1>
-            <div class="flex flex-col sm:flex-row gap-6 mt-8">
+            <div class="flex flex-col sm:flex-row gap-6 mt-6">
               <input
                 type="text"
-                placeholder="Enter your email address"
+                placeholder="이메일 주소를 입력해주세요."
                 class="flex-1 px-2 py-3 rounded-md text-black"
+                v-model="emailFormData.to"
               />
-              <button type="button" class="btn btn-primary">Contact Us</button>
+              <input
+                type="text"
+                placeholder="담당자명을 입력해주세요."
+                class="flex-1 px-2 py-3 rounded-md text-black"
+                v-model="emailFormData.name"
+              />
+            </div>
+            <div class="flex flex-col sm:flex-row gap-6 mt-6">
+              <input
+                type="text"
+                placeholder="문의하실 내용을 입력해주세요."
+                class="flex-1 px-2 py-3 rounded-md text-black"
+                v-model="emailFormData.text"
+              />
+            </div>
+            <div class="flex justify-center mt-6">
+              <button type="button" class="btn btn-primary" @click="sendEmail">
+                Contact Us
+              </button>
             </div>
           </div>
         </div>
@@ -380,6 +399,7 @@ import EnterpriseList from "@/components/EnterpriseList.vue"
 import TitleComponent from "@/components/TitleComponent.vue"
 import CompanyReviewCard from "@/components/CompanyReviewCard.vue"
 import AboutValue from "@/components/AboutValue.vue"
+import axios from "axios"
 
 // Import Swiper core and required modules
 import { Swiper, SwiperSlide } from "swiper/vue"
@@ -407,6 +427,12 @@ export default {
   },
   data() {
     return {
+      // 폼 데이터
+      emailFormData: {
+        to: "",
+        name: "",
+        text: "",
+      },
       activeCategory: "sec01",
       isActive: false,
       outcomeData: [
@@ -454,6 +480,18 @@ export default {
     },
     handleScroll() {
       this.isActive = window.scrollY > 100
+    },
+    sendEmail() {
+      axios
+        .post("http://localhost:3000/email/send", this.emailFormData)
+        .then(response => {
+          alert("메일이 전송되었습니다. 감사합니다.")
+          // 성공 메시지 처리
+        })
+        .catch(error => {
+          alert("메일 전송에 실패하였습니다. 다시 시도해주세요.")
+          // 오류 메시지 처리
+        })
     },
   },
   mounted() {
