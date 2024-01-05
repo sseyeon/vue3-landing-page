@@ -1,4 +1,4 @@
-<!-- src/views/Cocreation.vue -->
+<!-- src/views/Internship.vue -->
 <template>
   <div>
     <Header />
@@ -12,6 +12,7 @@
         v-for="projectItem in projectData"
         :key="projectItem.id"
         :project="projectItem"
+        @internship-click="redirectToInternship"
       />
     </div>
     <Footer />
@@ -19,14 +20,14 @@
 </template>
       
       <script>
-import Header from "@/components/layout/Header.vue";
-import TitleComponent from "@/components/TitleComponent.vue";
-import InternshipCard from "@/components/InternshipCard.vue";
-import Search from "@/components/Search.vue";
-import Footer from "@/components/layout/Footer.vue";
+import Header from "@/components/layout/Header.vue"
+import TitleComponent from "@/components/TitleComponent.vue"
+import InternshipCard from "@/components/InternshipCard.vue"
+import Search from "@/components/Search.vue"
+import Footer from "@/components/layout/Footer.vue"
 
 export default {
-  name: "Cocreation",
+  name: "Internship",
   components: {
     Header,
     TitleComponent,
@@ -256,8 +257,14 @@ export default {
           display_on_main: true,
         },
       ],
-    };
+    }
   },
-};
+  methods: {
+    // 리다이렉션을 처리할 메서드 추가
+    redirectToInternship(id) {
+      this.$router.push({ path: `/internship/${id}` })
+    },
+  },
+}
 </script>
       

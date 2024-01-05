@@ -1,11 +1,17 @@
 <template>
   <div class="container mx-auto max-w-6xl my-8">
-    <h1 class="text-2xl font-bold mb-4">Tiptap Editor</h1>
-    <input
-      type="text"
-      v-model="editorContent"
-      class="border border-gray-300 p-4 mb-4 w-full"
-    />
+    <div class="flex items-center gap-x-4 mb-4">
+      <SelectBox
+        :options="selectOptions"
+        v-model="selectedOption"
+        @change="handleSelectChange"
+      />
+      <input
+        type="text"
+        v-model="editorContent"
+        class="border border-gray-300 p-2 w-full"
+      />
+    </div>
     <section
       v-if="editor"
       class="buttons flex items-center flex-wrap gap-x-4 border-t border-l border-r border-gray-300 p-4"
@@ -93,8 +99,15 @@
         <font-awesome-icon :icon="['fas', 'image']" />
       </button>
     </section>
-
     <editor-content :editor="editor" />
+    <div class="flex justify-center gap-x-2 mt-8">
+      <button @click="handleSubmit" class="btn btn-primary">
+        <font-awesome-icon :icon="['fas', 'save']" /> 등록
+      </button>
+      <button @click="handleCancel" class="btn btn-outline-primary">
+        <font-awesome-icon :icon="['fas', 'times']" /> 뒤로가기
+      </button>
+    </div>
   </div>
 </template>
 
@@ -109,15 +122,33 @@ import OrderedList from "@tiptap/extension-ordered-list"
 import Paragraph from "@tiptap/extension-paragraph"
 import Text from "@tiptap/extension-text"
 import Image from "@tiptap/extension-image"
+import SelectBox from "@/components/CustomSelectBox.vue"
+// Image 확장을 커스터마이즈
+const CustomImage = Image.extend({
+  addAttributes() {
+    return {
+      ...this.parent?.(),
+      class: {
+        default: "w-1/2 h-1/2 items-center rounded-lg mx-auto", // 여기에 CSS 클래스를 적용
+      },
+    }
+  },
+})
 
 export default {
   components: {
     EditorContent,
+    SelectBox,
   },
 
   data() {
     return {
       editor: null,
+      selectOptions: [
+        { label: "뉴스", value: "announcement" },
+        { label: "공지사항", value: "press" },
+      ],
+      selectedOption: "announcement",
     }
   },
 
@@ -133,6 +164,7 @@ export default {
         OrderedList,
         ListItem,
         Image,
+        CustomImage,
       ],
       content: `
         <p>
@@ -189,6 +221,13 @@ export default {
         alert("이미지 파일만 선택 가능합니다.")
       }
     },
+    handleCancel() {
+      const confirm = window.confirm("게시물 등록을 취소하시겠습니까?")
+      if (confirm) window.history.back()
+    },
+    methods: {
+      handleSelectChange(value) {},
+    },
   },
 }
 </script>
@@ -219,5 +258,10 @@ export default {
   background-color: #cbd5e1;
   border-radius: 0.25rem;
   padding-inline: 0.25rem;
+}
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

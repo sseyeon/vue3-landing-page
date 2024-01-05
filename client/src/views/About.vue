@@ -354,8 +354,8 @@
             <p class="font-light uppercase text-center mb-8">
               100+ 기업 및 공공기관이 함께하고 있습니다.
             </p>
-            <h1 class="text-3xl text-center font-semibold">
-              Join us in what we're doing!
+            <h1 class="text-3xl text-center font-semibold mb-8">
+              Join us <br />in what we're doing!
             </h1>
             <div class="flex flex-col sm:flex-row gap-6 mt-6">
               <input

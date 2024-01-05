@@ -25,28 +25,29 @@ export default {
     },
     value: {
       type: [String, Number],
-      default: "2020",
+      default: "",
     },
   },
   data() {
     return {
-      selectedValue: this.value,
-    };
+      selectedValue:
+        this.value || (this.options.length > 0 ? this.options[0].value : ""),
+    }
   },
   watch: {
     value(newValue) {
-      this.selectedValue = newValue;
+      this.selectedValue = newValue
     },
     selectedValue(newValue) {
-      this.$emit("input", newValue); // v-model 지원
+      this.$emit("input", newValue) // v-model 지원
     },
   },
   methods: {
     handleChange() {
-      this.$emit("change", this.selectedValue);
+      this.$emit("change", this.selectedValue)
     },
   },
-};
+}
 </script>
   
   <style scoped>

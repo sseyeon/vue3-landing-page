@@ -1,6 +1,7 @@
 <template>
   <div
     class="relative overflow-hidden rounded-2xl shadow-lg h-[260px] group cursor-pointer mb-16"
+    @click="redirectToInternship"
   >
     <img
       class="transition-transform w-full group-hover:scale-110 duration-200"
@@ -24,7 +25,12 @@ export default {
   props: {
     project: Object, // 리뷰 정보를 받는 프로퍼티
   },
-};
+  methods: {
+    redirectToInternship() {
+      this.$emit("internship-click", this.project.id)
+    },
+  },
+}
 </script>
 
 <style>

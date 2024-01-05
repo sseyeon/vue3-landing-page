@@ -14,7 +14,7 @@
     </div>
     <div class="container mb-4">
       <img
-        src="http://www.gndomin.com/news/photo/202109/287757_281159_4834.jpg"
+        src="@/assets/images/2023-posters/2023_Poster_1.jpg"
         class="w-auto h-auto items-center rounded-lg mx-auto"
       />
       <div class="mt-9 mb-9 space-y-4">
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style>

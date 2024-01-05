@@ -22,7 +22,9 @@
             />
             News 페이지의 컨텐츠를 관리할 수 있습니다.
           </p>
-          <button class="btn btn-outline-primary btn-sm">+ 뉴스 추가</button>
+          <router-link to="/admin/news-management/add">
+            <button class="btn btn-outline-primary btn-sm">+ 뉴스 추가</button>
+          </router-link>
         </div>
         <Table
           :theadData="theadData"
@@ -41,7 +43,6 @@
             </button>
           </template>
         </Table>
-        <Tiptap />
       </div>
     </div>
   </div>
@@ -51,14 +52,14 @@
 import Sidebar from "@/components/layout/admin/Sidebar.vue"
 import Header from "@/components/layout/admin/Header.vue"
 import Table from "@/components/Table.vue"
-import Tiptap from "@/components/Tiptap.vue"
+// import Tiptap from "@/components/Tiptap.vue"
 export default {
   name: "NewsManagement",
   components: {
     Sidebar,
     Header,
     Table,
-    Tiptap,
+    // Tiptap,
   },
   data() {
     return {
