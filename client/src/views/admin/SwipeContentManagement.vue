@@ -49,9 +49,9 @@
 </template>
     
     <script>
-import Sidebar from "@/components/layout/admin/Sidebar.vue";
-import Header from "@/components/layout/admin/Header.vue";
-import Table from "@/components/Table.vue";
+import Sidebar from "@/components/layout/admin/Sidebar.vue"
+import Header from "@/components/layout/admin/Header.vue"
+import Table from "@/components/Table.vue"
 export default {
   name: "SwipeContentManagement",
   components: {
@@ -105,15 +105,15 @@ export default {
         "link",
         "image",
       ],
-    };
+    }
   },
   computed: {
     truncatedItems() {
-      return this.items.map((item) => ({
+      return this.items.map(item => ({
         ...item,
         title: this.truncateText(item.title, 20),
         description: this.truncateText(item.description, 20),
-      }));
+      }))
     },
   },
 
@@ -121,28 +121,34 @@ export default {
     // 텍스트를 일정 길이로 자르는 메소드
     truncateText(text, maxLength) {
       if (text.length > maxLength) {
-        return text.slice(0, maxLength) + "...";
+        return text.slice(0, maxLength) + "..."
       }
-      return text;
+      return text
     },
     async editItem(id) {
       // Logic to call PUT API
-      const response = await fetch(`http://localhost:3000/news/${id}`, {
-        method: "PUT",
-        // Additional request configurations (headers, body, etc.)
-      });
+      const response = await fetch(
+        `${process.env.VUE_APP_API_URL}/news/${id}`,
+        {
+          method: "PUT",
+          // Additional request configurations (headers, body, etc.)
+        }
+      )
       // Handle the response
     },
     async deleteItem(id) {
       // Logic to call DELETE API
-      const response = await fetch(`http://localhost:3000/news/${id}`, {
-        method: "DELETE",
-        // Additional request configurations (headers, body, etc.)
-      });
+      const response = await fetch(
+        `${process.env.VUE_APP_API_URL}/news/${id}`,
+        {
+          method: "DELETE",
+          // Additional request configurations (headers, body, etc.)
+        }
+      )
       // Handle the response
     },
   },
-};
+}
 </script>
     
     <style>

@@ -58,7 +58,7 @@ export default {
         this.isSubmenuVisible = !this.isSubmenuVisible
       } else if (this.label === "LMS") {
         // "LMS" 메뉴인 경우 naver.com으로 이동
-        window.location.href = "https://bigleader.first10.co.kr/"
+        window.open("https://bigleader.first10.co.kr/", "_blank")
       } else if (this.to) {
         // 페이지 이동이 필요한 경우에만 페이지 이동
         this.$router.push(this.to)

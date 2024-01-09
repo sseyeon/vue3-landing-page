@@ -215,7 +215,7 @@ export default {
           id: 1,
           title: "지식이 남들보다 뒤쳐지는 상황에서!",
           year: "빅리더 9기",
-          name: "김빅리더",
+          name: "공희배",
           vid: "Tr_uhyAi-Lw",
           link: "https://www.youtube.com/watch?v=Tr_uhyAi",
         },
@@ -321,7 +321,7 @@ export default {
         },
         {
           id: 3,
-          partner: "(주)대상",
+          partner: "대상(주)",
           year: "2023",
           award: "",
           project:

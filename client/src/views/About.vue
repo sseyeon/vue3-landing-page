@@ -483,7 +483,7 @@ export default {
     },
     sendEmail() {
       axios
-        .post("http://localhost:3000/email/send", this.emailFormData)
+        .post(`${process.env.VUE_APP_API_URL}/email/send`, this.emailFormData)
         .then(response => {
           alert("메일이 전송되었습니다. 감사합니다.")
           // 성공 메시지 처리

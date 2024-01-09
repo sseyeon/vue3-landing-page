@@ -28,7 +28,7 @@ export const projectData = [
   },
   {
     id: 3,
-    partner: '(주)대상',
+    partner: '대상(주)',
     year: '2023',
     award: '',
     project:

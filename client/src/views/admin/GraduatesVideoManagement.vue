@@ -55,9 +55,9 @@
 </template>
         
         <script>
-import Sidebar from "@/components/layout/admin/Sidebar.vue";
-import Header from "@/components/layout/admin/Header.vue";
-import Table from "@/components/Table.vue";
+import Sidebar from "@/components/layout/admin/Sidebar.vue"
+import Header from "@/components/layout/admin/Header.vue"
+import Table from "@/components/Table.vue"
 export default {
   name: "GraduatesVideoManagement",
   components: {
@@ -73,7 +73,7 @@ export default {
           id: 1,
           title: "지식이 남들보다 뒤쳐지는 상황에서!",
           year: "빅리더 9기",
-          name: "김빅리더",
+          name: "공희배",
           vid: "Tr_uhyAi-Lw",
           link: "https://www.youtube.com/watch?v=Tr_uhyAi",
         },
@@ -119,28 +119,34 @@ export default {
         },
       ],
       displayedKeys: ["id", "name", "year", "title", "vid"],
-    };
+    }
   },
 
   methods: {
     async editItem(id) {
       // Logic to call PUT API
-      const response = await fetch(`http://localhost:3000/news/${id}`, {
-        method: "PUT",
-        // Additional request configurations (headers, body, etc.)
-      });
+      const response = await fetch(
+        `${process.env.VUE_APP_API_URL}/news/${id}`,
+        {
+          method: "PUT",
+          // Additional request configurations (headers, body, etc.)
+        }
+      )
       // Handle the response
     },
     async deleteItem(id) {
       // Logic to call DELETE API
-      const response = await fetch(`http://localhost:3000/news/${id}`, {
-        method: "DELETE",
-        // Additional request configurations (headers, body, etc.)
-      });
+      const response = await fetch(
+        `${process.env.VUE_APP_API_URL}/news/${id}`,
+        {
+          method: "DELETE",
+          // Additional request configurations (headers, body, etc.)
+        }
+      )
       // Handle the response
     },
   },
-};
+}
 </script>
         
         <style>

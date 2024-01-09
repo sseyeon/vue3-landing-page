@@ -8,14 +8,15 @@
       :key="item.to"
       :to="item.to"
       :label="item.label"
+      :submenu="item.submenu"
       @click="closeMobileMenu"
-      class="block px-4 py-2 text-gray-800 z-50 hover:bg-gray-100 hover:rounded-lg"
+      class="block px-4 py-2 text-gray-800 z-50 hover:bg-gray-100 hover:text-blue-500 hover:rounded-lg"
     />
   </div>
 </template>
   
   <script>
-import MenuItem from "@/components/layout/MenuItem.vue";
+import MenuItem from "@/components/layout/MenuItem.vue"
 
 export default {
   props: {
@@ -23,12 +24,12 @@ export default {
   },
   methods: {
     closeMobileMenu() {
-      this.$emit("close");
+      this.$emit("close")
     },
   },
   components: {
     MenuItem,
   },
-};
+}
 </script>
   

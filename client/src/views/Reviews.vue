@@ -42,21 +42,21 @@
 </template>
 
 <script>
-import Header from "@/components/layout/Header.vue";
-import TitleComponent from "@/components/TitleComponent.vue";
-import ReviewCard from "@/components/ReviewCard.vue";
-import ReviewVideoCard from "@/components/ReviewVideoCard.vue";
-import Footer from "@/components/layout/Footer.vue";
+import Header from "@/components/layout/Header.vue"
+import TitleComponent from "@/components/TitleComponent.vue"
+import ReviewCard from "@/components/ReviewCard.vue"
+import ReviewVideoCard from "@/components/ReviewVideoCard.vue"
+import Footer from "@/components/layout/Footer.vue"
 
 // Import Swiper core and required modules
-import { Swiper, SwiperSlide } from "swiper/vue";
+import { Swiper, SwiperSlide } from "swiper/vue"
 import {
   Navigation,
   Pagination,
   Scrollbar,
   Autoplay,
   A11y,
-} from "swiper/modules";
+} from "swiper/modules"
 
 export default {
   name: "Reviews",
@@ -179,7 +179,7 @@ export default {
           id: 1,
           title: "지식이 남들보다 뒤쳐지는 상황에서!",
           year: "빅리더 9기",
-          name: "김빅리더",
+          name: "공희배",
           vid: "Tr_uhyAi-Lw",
           link: "https://www.youtube.com/watch?v=Tr_uhyAi",
         },
@@ -225,7 +225,7 @@ export default {
         },
       ],
       swiperModules: [Navigation, Pagination, Scrollbar, Autoplay, A11y],
-    };
+    }
   },
-};
+}
 </script>

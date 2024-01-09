@@ -106,7 +106,7 @@ export default {
         },
         {
           id: 3,
-          partner: "(주)대상",
+          partner: "대상(주)",
           year: "2023",
           award: "",
           project:
@@ -300,18 +300,24 @@ export default {
   methods: {
     async editNews(id) {
       // Logic to call PUT API
-      const response = await fetch(`http://localhost:3000/news/${id}`, {
-        method: "PUT",
-        // Additional request configurations (headers, body, etc.)
-      })
+      const response = await fetch(
+        `${process.env.VUE_APP_API_URL}/news/${id}`,
+        {
+          method: "PUT",
+          // Additional request configurations (headers, body, etc.)
+        }
+      )
       // Handle the response
     },
     async deleteNews(id) {
       // Logic to call DELETE API
-      const response = await fetch(`http://localhost:3000/news/${id}`, {
-        method: "DELETE",
-        // Additional request configurations (headers, body, etc.)
-      })
+      const response = await fetch(
+        `${process.env.VUE_APP_API_URL}/news/${id}`,
+        {
+          method: "DELETE",
+          // Additional request configurations (headers, body, etc.)
+        }
+      )
       // Handle the response
     },
   },

@@ -6,7 +6,7 @@
       titleText="Internship"
       subText="빅리더와 함께한 <br />공공기관 인턴십 프로젝트를 소개합니다."
     />
-    <Search />
+    <!-- <Search /> -->
     <div class="container max-w-screen-lg mt-10 mb-4">
       <InternshipCard
         v-for="projectItem in projectData"
@@ -68,7 +68,7 @@ export default {
         },
         {
           id: 3,
-          partner: "(주)대상",
+          partner: "대상(주)",
           year: "2023",
           award: "",
           project:
