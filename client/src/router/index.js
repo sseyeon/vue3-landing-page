@@ -11,6 +11,7 @@ import Reviews from "@/views/Reviews.vue"
 import Apply from "@/views/Apply.vue"
 import Article from "@/views/Article.vue"
 import InternshipDetail from "@/views/InternshipDetail.vue"
+import NotFound from "@/views/NotFound.vue"
 
 const routes = [
   { path: "/", component: Home },
@@ -52,6 +53,11 @@ const routes = [
   {
     path: "/admin/graduates-management-video",
     component: () => import("@/views/admin/GraduatesVideoManagement.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*", // 모든 정의되지 않은 경로를 포착
+    name: "NotFound",
+    component: NotFound,
   },
 ]
 
