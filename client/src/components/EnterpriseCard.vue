@@ -15,7 +15,9 @@
     </div>
     <hr class="border-b text-gray-50" />
     <div class="flex p-6">
-      <button class="flex-1 btn btn-primary">자세히</button>
+      <button class="flex-1 btn btn-primary" @click="redirectToInternship">
+        자세히
+      </button>
     </div>
   </div>
 </template>
@@ -26,6 +28,11 @@ export default {
   props: {
     enterprise: Object, // 리뷰 정보를 받는 프로퍼티
   },
-};
+  methods: {
+    redirectToInternship() {
+      this.$emit("internship-click", this.enterprise.id)
+    },
+  },
+}
 </script>
   

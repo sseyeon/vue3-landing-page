@@ -21,6 +21,9 @@ const instructor_module_1 = require("./instructor/instructor.module");
 const instructor_entity_1 = require("./instructor/entity/instructor.entity");
 const email_module_1 = require("./email/email.module");
 const config_1 = require("@nestjs/config");
+const project_module_1 = require("./project/project.module");
+const database_seeder_service_1 = require("./project/database-seeder.service");
+const project_entity_1 = require("./project/entity/project.entity");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -37,17 +40,19 @@ exports.AppModule = AppModule = __decorate([
                 username: 'bigleader',
                 password: '1234',
                 database: 'bigleader',
-                entities: [review_data_entity_1.ReviewData, faq_entity_1.Faq, review_video_data_entity_1.ReviewVideoData, instructor_entity_1.Instructor],
+                entities: [review_data_entity_1.ReviewData, faq_entity_1.Faq, review_video_data_entity_1.ReviewVideoData, instructor_entity_1.Instructor, project_entity_1.Project],
                 synchronize: true,
             }),
+            typeorm_1.TypeOrmModule.forFeature([project_entity_1.Project]),
             review_data_module_1.ReviewDataModule,
             faq_module_1.FaqModule,
             review_video_data_module_1.ReviewVideoDataModule,
             instructor_module_1.InstructorModule,
             email_module_1.EmailModule,
+            project_module_1.ProjectModule,
         ],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [app_service_1.AppService, database_seeder_service_1.DatabaseSeederService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

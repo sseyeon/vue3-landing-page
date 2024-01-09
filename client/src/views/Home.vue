@@ -26,6 +26,7 @@
           v-for="enterpriseItem in paginatedprojectData"
           :key="enterpriseItem.id"
           :enterprise="enterpriseItem"
+          @internship-click="redirectToInternship"
         />
       </div>
       <!-- 페이징 컨트롤 -->
@@ -178,17 +179,17 @@
 </template>
   
   <script>
-import Header from "@/components/layout/Header.vue";
-import Main from "@/components/Main.vue";
-import VideoList from "@/components/VideoList.vue";
-import Enterprise from "@/components/EnterpriseCard.vue";
-import EnterPriseList from "@/components/EnterpriseList.vue";
-import ReviewVideoCard from "@/components/ReviewVideoCard.vue";
-import ScheduleCard from "@/components/ScheduleCard.vue";
-import EductionProgram from "@/components/EductionProgram.vue";
-import FAQ from "@/components/FAQ.vue";
-import Footer from "@/components/layout/Footer.vue";
-import Swiper from "swiper/bundle";
+import Header from "@/components/layout/Header.vue"
+import Main from "@/components/Main.vue"
+import VideoList from "@/components/VideoList.vue"
+import Enterprise from "@/components/EnterpriseCard.vue"
+import EnterPriseList from "@/components/EnterpriseList.vue"
+import ReviewVideoCard from "@/components/ReviewVideoCard.vue"
+import ScheduleCard from "@/components/ScheduleCard.vue"
+import EductionProgram from "@/components/EductionProgram.vue"
+import FAQ from "@/components/FAQ.vue"
+import Footer from "@/components/layout/Footer.vue"
+import Swiper from "swiper/bundle"
 export default {
   name: "Home",
   components: {
@@ -296,7 +297,7 @@ export default {
           year: "2023",
           award: "",
           project:
-            "생성형 Al를 활용한 나에게 힘이 되는 AI 복지 서비스 개발 프로젝트",
+            "생성형 AI를 활용한 나에게 힘이 되는 AI 복지 서비스 개발 프로젝트",
           imgSrc: require("@/assets/images/partners/Korea_Social_Security_Administration.png"),
           link: "https://example.com/news1",
           thumbnail_url: "",
@@ -509,18 +510,18 @@ export default {
           display_on_main: true,
         },
       ],
-    };
+    }
   },
   computed: {
     paginatedprojectData() {
       // 현재 페이지에 맞게 기업 데이터를 페이징하여 반환
-      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-      const endIndex = startIndex + this.itemsPerPage;
-      return this.projectData.slice(startIndex, endIndex);
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage
+      const endIndex = startIndex + this.itemsPerPage
+      return this.projectData.slice(startIndex, endIndex)
     },
     totalPages() {
       // 전체 페이지 수 계산
-      return Math.ceil(this.projectData.length / this.itemsPerPage);
+      return Math.ceil(this.projectData.length / this.itemsPerPage)
     },
     // 기타 필요한 계산된 속성들
   },
@@ -528,17 +529,20 @@ export default {
     previousPage() {
       // 이전 페이지로 이동하는 메서드
       if (this.currentPage > 1) {
-        this.currentPage -= 1;
+        this.currentPage -= 1
       }
     },
     nextPage() {
       // 다음 페이지로 이동하는 메서드
       if (this.currentPage < this.totalPages) {
-        this.currentPage += 1;
+        this.currentPage += 1
       }
     },
-    // 기타 필요한 메서드들
+    // 리다이렉션을 처리할 메서드 추가
+    redirectToInternship(id) {
+      this.$router.push({ path: `/internship/${id}` })
+    },
   },
-};
+}
 </script>
   

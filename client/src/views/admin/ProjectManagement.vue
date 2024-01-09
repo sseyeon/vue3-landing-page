@@ -40,9 +40,9 @@
 </template>
       
       <script>
-import Sidebar from "@/components/layout/admin/Sidebar.vue";
-import Header from "@/components/layout/admin/Header.vue";
-import Table from "@/components/Table.vue";
+import Sidebar from "@/components/layout/admin/Sidebar.vue"
+import Header from "@/components/layout/admin/Header.vue"
+import Table from "@/components/Table.vue"
 export default {
   name: "ProjectManagement",
   components: {
@@ -82,7 +82,7 @@ export default {
           year: "2023",
           award: "",
           project:
-            "생성형 Al를 활용한 나에게 힘이 되는 AI 복지 서비스 개발 프로젝트",
+            "생성형 AI를 활용한 나에게 힘이 되는 AI 복지 서비스 개발 프로젝트",
           imgSrc: require("@/assets/images/partners/Korea_Social_Security_Administration.png"),
           link: "https://example.com/news1",
           thumbnail_url: "",
@@ -295,7 +295,7 @@ export default {
           display_on_main: true,
         },
       ],
-    };
+    }
   },
   methods: {
     async editNews(id) {
@@ -303,7 +303,7 @@ export default {
       const response = await fetch(`http://localhost:3000/news/${id}`, {
         method: "PUT",
         // Additional request configurations (headers, body, etc.)
-      });
+      })
       // Handle the response
     },
     async deleteNews(id) {
@@ -311,11 +311,11 @@ export default {
       const response = await fetch(`http://localhost:3000/news/${id}`, {
         method: "DELETE",
         // Additional request configurations (headers, body, etc.)
-      });
+      })
       // Handle the response
     },
   },
-};
+}
 </script>
       
       <style>
