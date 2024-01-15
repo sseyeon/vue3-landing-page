@@ -28,7 +28,7 @@ export const projectData = [
   },
   {
     id: 3,
-    partner: '대상(주)',
+    partner: '대상㈜',
     year: '2023',
     award: '',
     project:
@@ -42,7 +42,7 @@ export const projectData = [
   },
   {
     id: 4,
-    partner: '(주)코데이터솔루션',
+    partner: '㈜코데이터솔루션',
     year: '2023',
     award: '',
     project:
@@ -96,7 +96,7 @@ export const projectData = [
   },
   {
     id: 8,
-    partner: '(주)세아베스틸',
+    partner: '㈜세아베스틸',
     year: '2023',
     award: '',
     project: '생성형 AI를 활용한 수주규격 검토 자동화 서비스 개발 프로젝트',
@@ -109,7 +109,7 @@ export const projectData = [
   },
   {
     id: 9,
-    partner: '(주)세아베스틸',
+    partner: '㈜세아베스틸',
     year: '2023',
     award: '',
     project:
@@ -123,7 +123,7 @@ export const projectData = [
   },
   {
     id: 10,
-    partner: '(주)세아창원특수강',
+    partner: '㈜세아창원특수강',
     year: '2023',
     award: '',
     project: '스테인리스 선재(Wire Rod) 물성 예측 서비스 개발 프로젝트',
@@ -136,7 +136,7 @@ export const projectData = [
   },
   {
     id: 11,
-    partner: '(주)세아창원특수강',
+    partner: '㈜세아창원특수강',
     year: '2023',
     award: '',
     project: '스테인리스 봉강(Round Bar) 물성예측 서비스 개발 프로젝트',
