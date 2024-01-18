@@ -15,6 +15,10 @@ import { ConfigModule } from '@nestjs/config';
 import { ProjectModule } from './project/project.module';
 import { DatabaseSeederService } from './project/database-seeder.service';
 import { Project } from './project/entity/project.entity';
+import { ArticleModule } from './article/article.module';
+import { UserModule } from './user/user.module';
+import { User } from './user/entities/user.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -28,7 +32,7 @@ import { Project } from './project/entity/project.entity';
       username: 'bigleader', // 데이터베이스 유저 이름
       password: '1234', // 데이터베이스 비밀번호
       database: 'bigleader', // 데이터베이스 이름
-      entities: [ReviewData, Faq, ReviewVideoData, Instructor, Project], // 사용할 엔티티
+      entities: [ReviewData, Faq, ReviewVideoData, Instructor, Project, User], // 사용할 엔티티
       synchronize: true, // 개발 환경에서만 사용하세요
     }),
     TypeOrmModule.forFeature([Project]),
@@ -38,6 +42,9 @@ import { Project } from './project/entity/project.entity';
     InstructorModule,
     EmailModule,
     ProjectModule,
+    ArticleModule,
+    UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService, DatabaseSeederService],
