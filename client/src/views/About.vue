@@ -361,7 +361,7 @@
         >
           <img src="@/assets/images/logon_bl.png" class="mt-20" />
           <p class="text-center text-2xl mt-4 mb-40 font-semibold">
-            지역소멸 인구감소 대응을 위한<br />
+            지역특화 AI 혁신생태계 조성을 위한<br />
             새로운 인재 양성 시스템의 구현
           </p>
         </div>
@@ -496,7 +496,8 @@
                       class="h-6 w-6 text-white"
                     />
                   </div>
-                  데이터 및 AI 산업의 혁신 공유지 및 D.N.A 생태계 조성
+                  데이터 및 AI 산업의 혁신 공유지 및 지역특화 AI 혁신 생태계
+                  조성
                 </dt>
                 <dd class="mt-2 text-base leading-7 text-gray-600">
                   빅리더는 데이터 혁신인재 양성 현장 활용중심의 혁신서비스 개발
@@ -580,7 +581,9 @@
             </div>
             <!-- Content -->
             <div class="flex flex-1 flex-col items-center lg:items-start">
-              <h1 class="text-3xl font-semibold">지역특화 D.N.A 생태계 조성</h1>
+              <h1 class="text-3xl font-semibold">
+                지역특화 AI 혁신 생태계 조성
+              </h1>
               <p
                 class="text-xl my-4 text-center lg:text-left sm:w-3/4 lg:w-full"
                 data-aos="fade-up"
@@ -590,7 +593,7 @@
                   :icon="['fas', 'quote-left']"
                   class="text-blue-300"
                 />
-                Data. Network. AI
+                빅리더 혁신 가드닝 HUB의 성과와 열매
                 <font-awesome-icon
                   :icon="['fas', 'quote-right']"
                   class="text-blue-300"
@@ -601,8 +604,8 @@
               >
                 빅리더 혁신 가드닝 HUB는 <br />
                 데이터 인재 양성 및 청년들의 사회진출 및 지역소멸 그리고
-                인구감소 대응에 실질적 기여를 하는 정주기반의 지역특화 D.N.A
-                (Data. Network. AI) 생태계 조성에 결정적 기여를 합니다.
+                인구감소 대응에 실질적 기여를 하는 정주기반의 지역특화 AI 생태계
+                조성에 결정적 기여를 합니다.
               </p>
             </div>
           </div>
