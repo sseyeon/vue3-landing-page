@@ -8,7 +8,11 @@
     />
     <Search />
     <!-- Tabs for different categories -->
-    <div class="container mt-4 mb-8">
+    <div
+      class="container mt-4 mb-8"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div class="flex justify-center space-x-4">
         <button
           @click="changeCategory('all')"
@@ -44,7 +48,12 @@
       />
     </div>
     <!-- Show message if there are no news for the selected category -->
-    <div v-if="filteredNews.length === 0" class="container min-h-screen mt-16">
+    <div
+      v-if="filteredNews.length === 0"
+      class="container min-h-screen mt-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <p class="text-center text-gray-600">등록된 글이 없습니다.</p>
     </div>
     <Footer />

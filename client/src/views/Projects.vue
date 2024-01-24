@@ -11,6 +11,8 @@
         :options="selectOptions"
         v-model="selectedOption"
         @change="handleSelectChange"
+        data-aos="fade-up"
+        data-aos-duration="1000"
       />
     </div>
     <!-- Display news based on the selected category -->
@@ -21,6 +23,8 @@
         v-for="previousProjectItem in filteredProjects"
         :key="previousProjectItem.id"
         :previousProject="previousProjectItem"
+        data-aos="fade-up"
+        data-aos-duration="1000"
       />
     </div>
     <Footer />
@@ -28,11 +32,11 @@
 </template>
   
   <script>
-import Header from "@/components/layout/Header.vue";
-import TitleComponent from "@/components/TitleComponent.vue";
-import SelectBox from "@/components/CustomSelectBox.vue";
-import ProjectCard from "@/components/ProjectCard.vue";
-import Footer from "@/components/layout/Footer.vue";
+import Header from "@/components/layout/Header.vue"
+import TitleComponent from "@/components/TitleComponent.vue"
+import SelectBox from "@/components/CustomSelectBox.vue"
+import ProjectCard from "@/components/ProjectCard.vue"
+import Footer from "@/components/layout/Footer.vue"
 
 export default {
   name: "Projects",
@@ -358,7 +362,7 @@ export default {
           imgSrc: require("@/assets/images/partners/Korea_Industrial_Complex_Corporation_1.png"),
         },
       ],
-    };
+    }
   },
   methods: {
     handleSelectChange(value) {},
@@ -366,10 +370,10 @@ export default {
   computed: {
     filteredProjects() {
       return this.previousProjectData.filter(
-        (project) => project.year === this.selectedOption
-      );
+        project => project.year === this.selectedOption
+      )
     },
   },
-};
+}
 </script>
   

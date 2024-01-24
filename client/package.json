@@ -20,6 +20,7 @@
     "@tiptap/pm": "^2.1.13",
     "@tiptap/starter-kit": "^2.1.13",
     "@tiptap/vue-3": "^2.1.13",
+    "aos": "^2.3.4",
     "axios": "^1.6.4",
     "bxslider": "^4.2.14",
     "click-outside-vue3": "^4.0.1",

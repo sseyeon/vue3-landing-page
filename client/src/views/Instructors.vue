@@ -11,6 +11,8 @@
         v-for="instructorsItem in instructorData"
         :key="instructorsItem.id"
         :instructor="instructorsItem"
+        data-aos="fade-up"
+        data-aos-duration="1000"
       />
     </div>
     <Footer />
@@ -18,10 +20,10 @@
 </template>
   
   <script>
-import Header from "@/components/layout/Header.vue";
-import TitleComponent from "@/components/TitleComponent.vue";
-import InstructorCard from "@/components/InstructorCard.vue";
-import Footer from "@/components/layout/Footer.vue";
+import Header from "@/components/layout/Header.vue"
+import TitleComponent from "@/components/TitleComponent.vue"
+import InstructorCard from "@/components/InstructorCard.vue"
+import Footer from "@/components/layout/Footer.vue"
 
 export default {
   name: "Instructors",
@@ -175,8 +177,8 @@ export default {
             "한국생산성본부 : 교육 및 컨설팅 기획/운영<br>KAIST 연구소 : KML Converter 연구수행<br>KAIST 학사<br>저서<br> - 머신러닝·딥러닝 문제해결 전략 2022",
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
   

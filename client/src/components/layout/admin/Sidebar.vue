@@ -53,8 +53,8 @@
           class="inline-flex relative items-center py-[10px] px-[10px] w-full text-sm font-medium rounded-md border-gray-200 hover:bg-gray-300 hover:text-zinc-800"
         >
           <font-awesome-icon
+            :icon="['fab', 'youtube']"
             class="mr-2 w-[20px] h-[20px] fill-current"
-            :icon="['fas', 'comments']"
           />
           수료생 후기 관리 (유튜브)
         </router-link>
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style>

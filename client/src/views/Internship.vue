@@ -13,6 +13,8 @@
         :key="projectItem.id"
         :project="projectItem"
         @internship-click="redirectToInternship"
+        data-aos="fade-up"
+        data-aos-duration="1000"
       />
     </div>
     <Footer />

@@ -6,7 +6,11 @@
       titleText="Review"
       subText="빅리더 수료생들의 생생한 후기를 들어보세요."
     />
-    <div class="container lg:w-8/12 mt-20">
+    <div
+      class="container lg:w-8/12 mt-20"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <swiper
         :modules="swiperModules"
         :slides-per-view="1"
@@ -22,7 +26,11 @@
       </swiper>
     </div>
 
-    <div class="container lg:w-10/12 mt-10 mb-20">
+    <div
+      class="container lg:w-10/12 mt-10 mb-20"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <swiper
         :modules="swiperModules"
         :slides-per-view="3"

@@ -15,15 +15,16 @@
         />
       </div>
       <!-- Answer -->
-      <Transition name="fade">
-        <div
-          v-if="faq.expanded"
-          key="answer"
-          class="text-gray-600 mt-2 transition"
-        >
-          {{ faq.answer }}
-        </div>
-      </Transition>
+      <!-- <Transition name="fade"> -->
+      <div
+        v-if="faq.expanded"
+        key="answer"
+        class="text-gray-600 mt-2 transition"
+        data-aos="zoom-in"
+      >
+        {{ faq.answer }}
+      </div>
+      <!-- </Transition> -->
     </div>
   </div>
 </template>
@@ -36,12 +37,12 @@ export default {
   },
   methods: {
     toggleAnswer(index) {
-      this.faqs[index].expanded = !this.faqs[index].expanded;
+      this.faqs[index].expanded = !this.faqs[index].expanded
     },
   },
-};
+}
 </script>
-
+<!-- 
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
@@ -55,4 +56,4 @@ export default {
 .fade-enter-to {
   opacity: 1;
 }
-</style>
+</style> -->

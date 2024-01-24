@@ -14,6 +14,9 @@ import App from "./App.vue"
 import router from "./router"
 // Tailwind CSS 전역 스타일 추가
 import "./index.css"
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 const app = createApp(App)
 
 // createApp을 통해 생성한Application 인스턴스의 component API 활용
@@ -22,4 +25,5 @@ app.component("font-awesome-icon", FontAwesomeIcon)
 app.use(vClickOutside)
 
 app.use(router)
+app.use(AOS)
 app.mount("#app")

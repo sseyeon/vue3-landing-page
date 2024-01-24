@@ -12,6 +12,8 @@ import Apply from "@/views/Apply.vue"
 import Article from "@/views/Article.vue"
 import InternshipDetail from "@/views/InternshipDetail.vue"
 import NotFound from "@/views/NotFound.vue"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const routes = [
   { path: "/", component: Home },
@@ -98,6 +100,7 @@ router.beforeEach((to, from, next) => {
     window.botpressWebChat.isInitialized = true
   }
   // 계속 진행
+  AOS.init() // Initialize AOS
   next()
 })
 

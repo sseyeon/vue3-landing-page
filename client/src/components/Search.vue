@@ -1,6 +1,6 @@
 <template>
   <!-- 검색 -->
-  <section class="container">
+  <section class="container" data-aos="fade-up" data-aos-duration="1000">
     <div
       class="sm:w-3/4 lg:w-5/12 mt-4 relative rounded-3xl shadow-sm text-center mx-auto"
     >
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style>

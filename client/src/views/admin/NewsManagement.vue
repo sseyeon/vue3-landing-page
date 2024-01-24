@@ -52,6 +52,7 @@
 import Sidebar from "@/components/layout/admin/Sidebar.vue"
 import Header from "@/components/layout/admin/Header.vue"
 import Table from "@/components/Table.vue"
+import { truncateText } from "@/utils/utils.js"
 // import Tiptap from "@/components/Tiptap.vue"
 export default {
   name: "NewsManagement",
@@ -105,8 +106,8 @@ export default {
     truncatedNewsData() {
       return this.newsData.map(news => ({
         ...news,
-        title: this.truncateText(news.content, 20), // 예시로 10글자로 제한
-        content: this.truncateText(news.content, 30), // 예시로 100글자로 제한
+        title: truncateText(news.content, 20), // 예시로 10글자로 제한
+        content: truncateText(news.content, 30), // 예시로 100글자로 제한
       }))
     },
   },

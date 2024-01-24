@@ -1,6 +1,10 @@
 <template>
   <!-- 기업 이미지 컨테이너 -->
-  <div class="flex flex-wrap justify-center gap-4 mb-20">
+  <div
+    class="flex flex-wrap justify-center gap-4 mb-20"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
     <!-- 각 기업 이미지 -->
     <img
       src="@/assets/images/partners/Ceabestil.png"
@@ -103,7 +107,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style>

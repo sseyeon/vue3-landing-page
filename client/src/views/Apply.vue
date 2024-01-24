@@ -6,7 +6,11 @@
       titleText="Apply"
       subText="빅리더와 함께할 인재를 모집합니다. <br />지금 바로 지원하세요!"
     />
-    <div class="container mt-8 mb-8">
+    <div
+      class="container mt-8 mb-8"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div class="flex justify-center flex-wrap gap-2">
         <a
           href="https://docs.google.com/forms/d/1F6786P34HE7Iy86Bp-dTttu_pMSmef47zfLaFJ9tYB8/viewform?edit_requested=true"
@@ -109,11 +113,11 @@
 </template>
       
       <script>
-import Header from "@/components/layout/Header.vue";
-import TitleComponent from "@/components/TitleComponent.vue";
-import ScheduleCard from "@/components/ScheduleCard.vue";
-import Footer from "@/components/layout/Footer.vue";
-import CurriculumDetails from "@/components/CurriculumDetails.vue";
+import Header from "@/components/layout/Header.vue"
+import TitleComponent from "@/components/TitleComponent.vue"
+import ScheduleCard from "@/components/ScheduleCard.vue"
+import Footer from "@/components/layout/Footer.vue"
+import CurriculumDetails from "@/components/CurriculumDetails.vue"
 
 export default {
   name: "Apply",
@@ -124,6 +128,6 @@ export default {
     Footer,
     CurriculumDetails,
   },
-};
+}
 </script>
       

@@ -14,7 +14,7 @@
 <script>
 import Sidebar from "@/components/layout/admin/Sidebar.vue"
 import Header from "@/components/layout/admin/Header.vue"
-import NewsEditor from "@/components/NewsEditor.vue"
+import NewsEditor from "@/components/admin/NewsEditor.vue"
 
 export default {
   name: "NewsAdd",

@@ -82,6 +82,21 @@ export default {
     return {
       items: [
         {
+          image: require("@/assets/images/swipe-img-00.jpg"),
+          title:
+            "“현장경험으로 청년 AI 역량 기술 강화할 것”<br />빅리더 AI 페스타 성황리 마무리",
+          description: "초거대 AI시대, 선순환 가치창출 시스템 구축 목적",
+          buttonText: "보도자료 보기",
+          link: "https://www.k-health.com/news/articleView.html?idxno=69627",
+        },
+        {
+          image: require("@/assets/images/swipe-img-01.jpg"),
+          title: "KOTRA, 빅리더 아카데미와 청년 AI 인재 양성 지원",
+          description: "디지털 무역 관련 AI 분석과제 기획·멘토링 제공",
+          buttonText: "보도자료 보기",
+          link: "https://n.news.naver.com/article/119/0002789521?sid=101",
+        },
+        {
           image: require("@/assets/images/2023-posters/2023_Poster_1.jpg"),
           title: "한국고용정보원, <br />‘빅리더 프로젝트 인턴십 프로그램’ 진행",
           description: "실무 중심 프로젝트로 경력개발 준비까지",
