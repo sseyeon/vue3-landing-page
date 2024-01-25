@@ -54,7 +54,7 @@
           >
             <img
               :src="image.imgSrc"
-              class="w-full h-full object-cover shadow-lg rounded-full"
+              class="w-full h-full object-cover shadow-lg rounded-lg"
               alt=""
             />
           </div>
@@ -132,10 +132,10 @@ const descriptions = [
 
 const images = [
   {
-    imgSrc: require("@/assets/images/bigleader-outcome/outcome-picture-01.jpeg"),
+    imgSrc: require("@/assets/images/main-esg-01.jpg"),
   },
   {
-    imgSrc: require("@/assets/images/bigleader-outcome/outcome-picture-02.png"),
+    imgSrc: require("@/assets/images/bigleader-outcome/outcome-picture-03.png"),
   },
 ]
 </script>
