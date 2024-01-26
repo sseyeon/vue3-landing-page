@@ -17,7 +17,7 @@
           />
           뉴스 게시판 관리
         </router-link>
-
+        <!-- 
         <router-link
           to="/admin/swipe-contents"
           class="inline-flex relative items-center py-[10px] px-[10px] w-full text-sm font-medium rounded-md border-gray-200 hover:bg-gray-300 hover:text-zinc-800"
@@ -27,7 +27,7 @@
             :icon="['fas', 'exchange-alt']"
           />
           스와이프 컨텐츠 관리
-        </router-link>
+        </router-link> -->
         <router-link
           to="/admin/project-management"
           class="inline-flex relative items-center py-[10px] px-[10px] w-full text-sm font-medium rounded-md border-gray-200 hover:bg-gray-300 hover:text-zinc-800"

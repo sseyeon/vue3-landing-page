@@ -10,24 +10,24 @@
           isActive,
       }"
     >
-      <!-- <div class="flex justify-center space-x-4">
+      <div class="flex justify-center space-x-8">
         <button
           @click="changeCategory('sec01')"
           :class="{ 'text-blue-500 ': activeCategory === 'sec01' }"
         >
-          추진배경
+          비전
         </button>
         <button
           @click="changeCategory('sec02')"
           :class="{ 'text-blue-500 ': activeCategory === 'sec02' }"
         >
-          핵심추진전략
+          혁신가드닝HUB
         </button>
         <button
           @click="changeCategory('sec03')"
           :class="{ 'text-blue-500 ': activeCategory === 'sec03' }"
         >
-          혁신가드닝
+          지역특화 AI 혁신생태계
         </button>
         <button
           @click="changeCategory('sec04')"
@@ -37,10 +37,10 @@
         >
           성과
         </button>
-      </div> -->
+      </div>
     </div>
     <div class="mt-20">
-      <section ref="sec01" id="#sec01">
+      <section v-if="sectionsVisibility.sec01">
         <div
           class="relative h-[75vh] mt-20 sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
           data-aos="fade-up"
@@ -95,12 +95,13 @@
           </div>
         </div>
       </section>
-      <section>
+      <section v-if="sectionsVisibility.sec01">
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-24">
           <AboutValue />
         </div>
       </section>
       <section
+        v-if="sectionsVisibility.sec02"
         ref="sec02"
         id="#sec02"
         class="mt-24"
@@ -155,7 +156,7 @@
         </div>
         <!-- Feature #2 -->
       </section>
-      <section>
+      <section v-if="sectionsVisibility.sec02">
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-48">
           <div class="bg-white">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -183,7 +184,7 @@
           </div>
         </div>
       </section>
-      <section ref="sec03" id="#sec03">
+      <section v-if="sectionsVisibility.sec02">
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-48">
           <div
             class="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-16"
@@ -229,7 +230,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section v-if="sectionsVisibility.sec02">
         <div class="relative mt-28 sm:w-3/4 lg:w-9/12 mx-auto mb-24">
           <div class="bg-white mb-24">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -353,7 +354,7 @@
           </div>
         </div>
       </section>
-      <section ref="sec01" id="#sec01">
+      <!-- <section v-if="sectionsVisibility.sec03">
         <div
           class="relative lg:h-[75vh] mt-20 sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
           data-aos="fade-up"
@@ -365,8 +366,8 @@
             새로운 인재 양성 시스템의 구현
           </p>
         </div>
-      </section>
-      <section>
+      </section> -->
+      <section v-if="sectionsVisibility.sec03">
         <div
           class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-56"
           data-aos="fade-up"
@@ -512,7 +513,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section v-if="sectionsVisibility.sec03">
         <div class="relative mt-28 sm:w-3/4 lg:w-9/12 mx-auto mb-48">
           <div class="bg-white mb-24">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -564,7 +565,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section v-if="sectionsVisibility.sec03">
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto mb-48">
           <div
             class="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-24 mb-24"
@@ -769,7 +770,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section v-if="sectionsVisibility.sec02">
         <div class="relative mt-20 sm:w-3/4 lg:w-9/12 mx-auto">
           <div
             class="container flex flex-col lg:flex-row items-center justify-center gap-x-24 mb-24"
@@ -878,7 +879,24 @@
         </div>
       </section>
 
-      <section ref="sec04" id="#sec04">
+      <section v-if="sectionsVisibility.sec04">
+        <div
+          class="relative mt-24 sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/AAffUPJ113I?si=xHnGZfwbQWNfqw6X"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+      <section v-if="sectionsVisibility.sec04">
         <div
           class="relative mt-24 sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
           data-aos="fade-up"
@@ -891,14 +909,14 @@
           <EnterpriseList />
         </div>
       </section>
-      <section ref="sec05" id="#sec05">
+      <section v-if="sectionsVisibility.sec04">
         <div
           class="relative sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
         >
           <CompanyReviewCard />
         </div>
       </section>
-      <section ref="sec06" id="#sec06">
+      <section v-if="sectionsVisibility.sec04">
         <div class="bg-white py-28">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div
@@ -941,7 +959,7 @@
         </div>
       </section>
       <!-- Contact Us -->
-      <section class="bg-blue-100 py-20">
+      <section class="bg-blue-100 py-20" v-if="sectionsVisibility.sec04">
         <div class="container">
           <div
             class="sm:w-3/4 lg:w-2/4 mx-auto"
@@ -1024,6 +1042,13 @@ export default {
   },
   data() {
     return {
+      sectionsVisibility: {
+        sec01: true,
+        sec02: false,
+        sec03: false,
+        sec04: false,
+        // 추가 섹션들에 대한 표시 여부
+      },
       // 폼 데이터
       emailFormData: {
         to: "",
@@ -1071,9 +1096,20 @@ export default {
   },
   methods: {
     changeCategory(category) {
-      const sectionRef = this.$refs[category]
-      sectionRef.scrollIntoView({ behavior: "smooth" })
+      // 모든 섹션을 숨깁니다.
+      Object.keys(this.sectionsVisibility).forEach(key => {
+        this.sectionsVisibility[key] = false
+      })
+
+      // 선택된 카테고리만 표시합니다.
+      this.sectionsVisibility[category] = true
+      // const sectionRef = this.$refs[category]
+      // sectionRef.scrollIntoView({ behavior: "smooth" })
       this.activeCategory = category
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
     },
     handleScroll() {
       this.isActive = window.scrollY > 100

@@ -7,6 +7,21 @@
       subText="빅리더 수료생들의 생생한 후기를 들어보세요."
     />
     <div
+      class="relative mt-24 sm:w-3/4 lg:w-9/12 mx-auto flex flex-col justify-center items-center"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/r-of0g69rxw?si=5DBbdYFvu2tuoPHM"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div
       class="container lg:w-8/12 mt-20"
       data-aos="fade-up"
       data-aos-duration="1000"
@@ -79,6 +94,7 @@ export default {
   },
   data() {
     return {
+      youtubeUrl: "https://www.youtube.com/watch?v=r-of0g69rxw",
       reviewData: [
         {
           id: 1,

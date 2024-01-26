@@ -139,6 +139,43 @@
     >
       <img
         class="absolute w-full h-full object-cover -z-10"
+        :src="require('@/assets/images/main-interview.png')"
+        :style="{ height: `calc(100vh - ${headerHeight}px)` }"
+      />
+      <!-- 콘텐츠 -->
+      <div
+        class="h-screen w-full flex items-center justify-center bg-zinc-900/50 text-white"
+        :style="{ height: `calc(100vh - ${headerHeight}px)` }"
+      >
+        <div class="text-center">
+          <div
+            class="flex justify-center flex-wrap gap-4 mb-6 border-bottom-center"
+          >
+            INTERVIEW
+          </div>
+          <h1 class="text-5xl font-semibold mb-4">
+            빅리더 프로젝트 인턴십 <br />어떤가요?
+          </h1>
+          <p class="mb-4">지난 수료생들의 생생한 후기를 들어보세요.</p>
+          <a
+            href="https://www.youtube.com/watch?v=r-of0g69rxw"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            시청하기
+            <font-awesome-icon :icon="['fas', 'fa-paper-plane']" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section relative"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <img
+        class="absolute w-full h-full object-cover -z-10"
         :src="require('@/assets/images/main-media.jpg')"
         :style="{ height: `calc(100vh - ${headerHeight}px)` }"
       />

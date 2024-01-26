@@ -11,12 +11,12 @@
         </p>
         <p>
           Copyright &copy; BIGLEADER All Rights Reserved.
-          <router-link to="/admin" class="mr-4">
+          <!-- <router-link to="/admin" class="mr-4">
             <font-awesome-icon
               :icon="['fas', 'user-lock']"
               style="color: #000"
             />
-          </router-link>
+          </router-link> -->
         </p>
       </div>
     </div>
@@ -44,7 +44,7 @@
 <script>
 export default {
   name: "Footer",
-};
+}
 </script>
 
 <style scoped>
