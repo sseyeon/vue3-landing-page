@@ -2,7 +2,7 @@
 <template>
   <div>
     <Header />
-    <div class="container lg:w-9/12">
+    <div class="container lg:w-9/12 mb-24">
       <ArticleComponent :articleData="article" />
     </div>
     <Footer />

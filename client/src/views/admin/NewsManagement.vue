@@ -65,40 +65,7 @@ export default {
   data() {
     return {
       theadData: ["ID", "카테고리", "타이틀", "컨텐츠", "날짜", "관리"],
-      newsData: [
-        {
-          id: 1,
-          category: "press",
-          createdAt: "2021-09-23",
-          title: "창원시, 창원대·경남대와 빅데이터 상생발전 협약 체결",
-          content:
-            "창원시는 23일 오전 시청 접견실에서 창원대학교, 경남대학교와 ‘빅데이터 기반 지역 상생 발전을 위한 협약’을 체결했다. 이는 최근 4차 산업혁명시대의 도래와 인공지능(AI) 및 빅데이터에 대한 사회적 관심이 높아지고 있는 데 따른 것이다.",
-          image:
-            "https://www.gnnews.co.kr/news/photo/202108/481467_268480_4052.jpg",
-          link: "https://example.com/news1",
-        },
-        {
-          id: 2,
-          category: "press",
-          createdAt: "2021-09-23",
-          title:
-            "전국의 혁신 인재 창원에 모여, AI 기술로 다양한 분야 문제 해결",
-          content:
-            "창원시는 지난 8월 30일 한려해상생태탐방원에서 경남대학교와 ‘빅 챌린지 경연 대회’를 개최하고 산업 전반의 혁신을 주도하고 국가 경쟁력의 원천이 될 데이터 청년 인재 양성을 위해 추진한 ‘창원 빅리더 AI 아카데미’를 마무리했다.",
-          image:
-            "http://www.gndomin.com/news/photo/202109/287757_281159_4834.jpg",
-          link: "http://www.gndomin.com/news/photo/202109/287757_281159_4834.jpg",
-        },
-        {
-          id: 3,
-          category: "announcement",
-          createdAt: "2021-09-23",
-          title: "2024 빅리더 모집",
-          content: "[모집공고] 2024년 창원시 빅리더 아카데미 2기 모집 안내",
-          image: "https://i.ytimg.com/vi/RdlyNIsoyVs/maxresdefault.jpg",
-          link: "http://www.gndomin.com/news/photo/202109/287757_281159_4834.jpg",
-        },
-      ],
+      newsData: [],
       displayedKeys: ["id", "category", "title", "content", "createdAt"],
     }
   },
@@ -117,7 +84,7 @@ export default {
   methods: {
     async fetchNewsData() {
       try {
-        const response = await fetch(`${process.env.VUE_APP_API_URL}/news`)
+        const response = await fetch(`${process.env.VUE_APP_API_URL}/article`)
         if (!response.ok) {
           throw new Error("Network response was not ok")
         }
@@ -136,7 +103,7 @@ export default {
     async editNews(id) {
       // Logic to call PUT API
       const response = await fetch(
-        `${process.env.VUE_APP_API_URL}/news/${id}`,
+        `${process.env.VUE_APP_API_URL}/article/${id}`,
         {
           method: "PUT",
           // Additional request configurations (headers, body, etc.)
@@ -146,13 +113,28 @@ export default {
     },
     async deleteNews(id) {
       // Logic to call DELETE API
-      const response = await fetch(
-        `${process.env.VUE_APP_API_URL}/news/${id}`,
-        {
-          method: "DELETE",
-          // Additional request configurations (headers, body, etc.)
+      try {
+        const response = await fetch(
+          `${process.env.VUE_APP_API_URL}/article/${id}`,
+          {
+            method: "DELETE",
+            // Additional request configurations (headers, body, etc.)
+          }
+        )
+
+        if (response.ok) {
+          // 성공 처리
+          alert("뉴스/공지사항이 성공적으로 삭제되었습니다.")
+          window.location.reload()
+          // 페이지 리디렉션 또는 상태 초기화 등
+        } else {
+          // 오류 처리
+          alert("삭제에 실패했습니다: " + response.status)
         }
-      )
+      } catch (error) {
+        console.error("Fetch error:", error)
+        alert("삭제 중 오류가 발생했습니다.")
+      }
       // Handle the response
     },
   },

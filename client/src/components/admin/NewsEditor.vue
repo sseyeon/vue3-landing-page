@@ -12,6 +12,17 @@
         class="border border-gray-300 p-2 w-full"
         placeholder="제목을 입력하세요"
       />
+      <input
+        type="text"
+        v-model="sourceLink"
+        class="border border-gray-300 p-2 w-full"
+        placeholder="출처를 입력하세요"
+      />
+      <input
+        type="date"
+        v-model="createdAt"
+        class="border border-gray-300 p-2 w-full"
+      />
     </div>
     <section
       v-if="editor"
@@ -130,7 +141,7 @@ const CustomImage = Image.extend({
     return {
       ...this.parent?.(),
       class: {
-        default: "w-1/2 h-1/2 items-center rounded-lg mx-auto", // 여기에 CSS 클래스를 적용
+        default: "w-1/2 h-1/2 items-center rounded-lg mx-auto  mt-6 mb-6", // 여기에 CSS 클래스를 적용
       },
     }
   },
@@ -147,10 +158,12 @@ export default {
       title: "",
       editor: null,
       selectOptions: [
-        { label: "뉴스", value: "announcement" },
-        { label: "공지사항", value: "press" },
+        { label: "뉴스", value: "press" },
+        { label: "공지사항", value: "announcement" },
       ],
-      selectedOption: "announcement",
+      selectedOption: "press",
+      thumbnail: null, // 썸네일 이미지의 URL을 저장할 속성
+      sourceLink: "", // 기사 링크를 저장할 속성
     }
   },
 
@@ -196,6 +209,12 @@ export default {
         const reader = new FileReader()
 
         reader.onload = e => {
+          const imageUrl = e.target.result
+
+          // 첫 번째 이미지를 썸네일로 설정
+          if (!this.thumbnail) {
+            this.thumbnail = imageUrl
+          }
           // Assuming 'editor' is your tiptap Editor instance
           this.editor.chain().focus().setImage({ src: e.target.result }).run()
         }
@@ -220,8 +239,11 @@ export default {
           },
           body: JSON.stringify({
             title: this.title,
+            createdAt: this.createdAt,
             content: this.editor.getHTML(), // tiptap 에디터의 내용
             category: this.selectedOption, // 선택된 카테고리
+            thumbnail: this.thumbnail, // 썸네일 URL 추가
+            sourceLink: this.sourceLink, // 기사 링크 추가
             // 필요한 경우 기타 데이터
           }),
         })
@@ -229,6 +251,7 @@ export default {
         if (response.ok) {
           // 성공 처리
           alert("뉴스/공지사항이 성공적으로 등록되었습니다.")
+          this.$router.push("/admin/news-management")
           // 페이지 리디렉션 또는 상태 초기화 등
         } else {
           // 오류 처리

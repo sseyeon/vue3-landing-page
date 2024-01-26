@@ -130,7 +130,23 @@ export default {
       }
     },
   },
+  mounted() {
+    this.fetchNewsData()
+  },
   methods: {
+    async fetchNewsData() {
+      try {
+        const response = await fetch(`${process.env.VUE_APP_API_URL}/article`)
+        if (response.ok) {
+          const data = await response.json()
+          this.newsData = data // 데이터를 newsData에 저장합니다.
+        } else {
+          console.error("Error fetching news data:", response)
+        }
+      } catch (error) {
+        console.error("Fetch error:", error)
+      }
+    },
     // 카테고리 변경 메서드
     changeCategory(category) {
       this.activeCategory = category

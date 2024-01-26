@@ -8,8 +8,8 @@
     <div class="group-hover:scale-105 transition duration-300 cursor-pointer">
       <!-- 기사 이미지 (예시: 이미지 주소를 실제 데이터로 대체해야 합니다) -->
       <img
-        v-if="news.image"
-        :src="news.image"
+        v-if="news.thumbnail"
+        :src="news.thumbnail"
         alt="News Image"
         class="w-full h-40 object-cover mb-4 rounded-md"
       />
@@ -18,14 +18,17 @@
       <h2 class="text-xl font-semibold text-gray-800 mb-2">{{ news.title }}</h2>
 
       <!-- 기사 내용 (예시: 내용이 너무 길면 적절히 자르거나 요약해야 합니다) -->
-      <p class="text-gray-600 mb-4">{{ truncateText(news.content, 64) }}</p>
+      <div
+        class="text-gray-600 mb-4"
+        v-html="truncateText(news.content, 64)"
+      ></div>
 
       <!-- 기사 링크 (예시: 기사의 실제 링크로 대체해야 합니다) -->
       <div class="flex justify-between flex-wrap gap-2 mb-2">
         <span class="text-gray-400">
           {{ news.category === "press" ? "보도자료" : "공지사항"
           }}<font-awesome-icon class="ml-2" :icon="['far', 'calendar']" />
-          {{ news.createdAt }}
+          {{ formattedCreatedAt }}
         </span>
       </div>
     </div>
@@ -40,19 +43,31 @@ export default {
       required: true,
     },
   },
+  computed: {
+    formattedCreatedAt() {
+      if (this.news.createdAt) {
+        const date = new Date(this.news.createdAt)
+        const year = date.getFullYear()
+        const month = ("0" + (date.getMonth() + 1)).slice(-2)
+        const day = ("0" + date.getDate()).slice(-2)
+        return `${year}.${month}.${day}`
+      }
+      return ""
+    },
+  },
   methods: {
     // 텍스트를 일정 길이로 자르는 메소드
     truncateText(text, maxLength) {
       if (text.length > maxLength) {
-        return text.slice(0, maxLength) + "...";
+        return text.slice(0, maxLength) + "..."
       }
-      return text;
+      return text
     },
     redirectToArticle() {
-      this.$emit("article-click", this.news.id);
+      this.$emit("article-click", this.news.id)
     },
   },
-};
+}
 </script>
   
   <style scoped>

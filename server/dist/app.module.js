@@ -28,6 +28,7 @@ const article_module_1 = require("./article/article.module");
 const user_module_1 = require("./user/user.module");
 const user_entity_1 = require("./user/entities/user.entity");
 const auth_module_1 = require("./auth/auth.module");
+const article_entity_1 = require("./article/entity/article.entity");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -44,7 +45,15 @@ exports.AppModule = AppModule = __decorate([
                 username: 'bigleader',
                 password: '1234',
                 database: 'bigleader',
-                entities: [review_data_entity_1.ReviewData, faq_entity_1.Faq, review_video_data_entity_1.ReviewVideoData, instructor_entity_1.Instructor, project_entity_1.Project, user_entity_1.User],
+                entities: [
+                    review_data_entity_1.ReviewData,
+                    faq_entity_1.Faq,
+                    review_video_data_entity_1.ReviewVideoData,
+                    instructor_entity_1.Instructor,
+                    project_entity_1.Project,
+                    user_entity_1.User,
+                    article_entity_1.Article,
+                ],
                 synchronize: true,
             }),
             typeorm_1.TypeOrmModule.forFeature([project_entity_1.Project]),

@@ -19,6 +19,7 @@ import { ArticleModule } from './article/article.module';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
+import { Article } from './article/entity/article.entity';
 
 @Module({
   imports: [
@@ -32,7 +33,15 @@ import { AuthModule } from './auth/auth.module';
       username: 'bigleader', // 데이터베이스 유저 이름
       password: '1234', // 데이터베이스 비밀번호
       database: 'bigleader', // 데이터베이스 이름
-      entities: [ReviewData, Faq, ReviewVideoData, Instructor, Project, User], // 사용할 엔티티
+      entities: [
+        ReviewData,
+        Faq,
+        ReviewVideoData,
+        Instructor,
+        Project,
+        User,
+        Article,
+      ], // 사용할 엔티티
       synchronize: true, // 개발 환경에서만 사용하세요
     }),
     TypeOrmModule.forFeature([Project]),

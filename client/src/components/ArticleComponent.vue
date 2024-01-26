@@ -3,36 +3,21 @@
     <!-- Heading -->
     <div class="container text-center" v-if="articleData">
       <h1 class="text-gray-400 font-semibold text-base">
-        {{ categoryName }} | {{ articleData.createdAt }} |
-        {{ articleData.createdAt }}
+        {{ categoryName }} | {{ formattedCreatedAt }}
       </h1>
       <h1 class="mt-4 font-semibold text-3xl">
         {{ articleData.title }}
       </h1>
-      <div class="mt-10 mb-12 text-center">
-        <font-awesome-icon :icon="['fas', 'link']" />
+      <div class="mt-10 mb-12 text-center space-x-4 text-gray-600">
+        <a :href="articleData.sourceLink" target="_blank"
+          ><font-awesome-icon :icon="['fas', 'link']" /> 원문보기</a
+        >
+        <span class="cursor-pointer" @click="copyToClipboard"
+          ><font-awesome-icon :icon="['fas', 'share-alt']" /> 공유하기</span
+        >
       </div>
     </div>
-    <div class="container mb-4">
-      {{ articleData.content }}
-      <!-- <img
-        src="@/assets/images/2023-posters/2023_Poster_1.jpg"
-        class="w-auto h-auto items-center rounded-lg mx-auto"
-      /> -->
-      <!-- <div class="mt-9 mb-9 space-y-4">
-        <p>
-          창원시는 23일 오전 시청 접견실에서 창원대학교, 경남대학교와 ‘빅데이터
-          기반 지역 상생 발전을 위한 협약’을 체결했다. 이는 최근 4차
-          산업혁명시대의 도래와 인공지능(AI) 및 빅데이터에 대한 사회적 관심이
-          높아지고 있는 데 따른 것이다.
-        </p>
-        <p>
-          협약식에는 허성무 시장, 이호영 창원대 총장, 강재관 경남대 산학부총장이
-          참석했으며, 3개 기관이 손잡고 인재양성, 데이터 구축, 국비확보를 위한
-          긴밀한 협력 관계를 구축하기로 약속했다.
-        </p>
-      </div> -->
-    </div>
+    <div class="container mb-4" v-html="articleData.content"></div>
   </section>
 </template>
 
@@ -46,6 +31,7 @@ export default {
   },
   computed: {
     categoryName() {
+      // articleData.category에 의존하는 계산된 속성
       if (this.articleData.category === "press") {
         return "보도자료"
       } else if (this.articleData.category === "announcement") {
@@ -53,9 +39,30 @@ export default {
       }
       return "" // 혹은 기본값
     },
+    formattedCreatedAt() {
+      if (this.articleData.createdAt) {
+        const date = new Date(this.articleData.createdAt)
+        const year = date.getFullYear()
+        const month = ("0" + (date.getMonth() + 1)).slice(-2)
+        const day = ("0" + date.getDate()).slice(-2)
+        return `${year}.${month}.${day}`
+      }
+      return ""
+    },
+  },
+  methods: {
+    copyToClipboard() {
+      const currentUrl = window.location.href
+      navigator.clipboard
+        .writeText(currentUrl)
+        .then(() => {
+          alert("주소가 복사되었습니다.")
+        })
+        .catch(err => {
+          console.error("주소 복사에 실패했습니다:", err)
+          alert("주소를 복사하는데 실패했습니다.")
+        })
+    },
   },
 }
 </script>
-
-<style>
-</style>
