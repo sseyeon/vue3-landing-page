@@ -158,7 +158,7 @@
           </h1>
           <p class="mb-4">지난 수료생들의 생생한 후기를 들어보세요.</p>
           <a
-            href="https://www.youtube.com/watch?v=r-of0g69rxw"
+            href="https://www.youtube.com/watch?v=z5PbGBbisxs"
             target="_blank"
             class="btn btn-primary"
           >

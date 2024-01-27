@@ -5,7 +5,7 @@ import About from "@/views/About.vue"
 import News from "@/views/News.vue"
 import Internship from "@/views/Internship.vue"
 import Faq from "@/views/Faq.vue"
-import Instructors from "@/views/Instructors.vue"
+import Mentor from "@/views/Mentor.vue"
 import Projects from "@/views/Projects.vue"
 import Reviews from "@/views/Reviews.vue"
 import Apply from "@/views/Apply.vue"
@@ -21,7 +21,7 @@ const routes = [
   { path: "/news", component: News },
   { path: "/internship", component: Internship },
   { path: "/faq", component: Faq },
-  { path: "/instructors", component: Instructors },
+  { path: "/mentor", component: Mentor },
   { path: "/projects", component: Projects },
   { path: "/review", component: Reviews },
   { path: "/apply", component: Apply },

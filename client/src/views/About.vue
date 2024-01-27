@@ -903,8 +903,10 @@
           data-aos-duration="1000"
         >
           <h1 class="text-center text-4xl mb-20">
-            이미 <span class="font-extrabold">102</span>개의 기업이 함께 하고
+            이미 다수의 <br />지자체 ∙ 공공기관 ∙ 기업 ∙ 대학교가 함께 하고
             있습니다.
+            <!-- 이미 <span class="font-extrabold">102</span>개의 기업이 함께 하고
+            있습니다. -->
           </h1>
           <EnterpriseList />
         </div>

@@ -11,7 +11,7 @@ import { ReviewVideoData } from './review-video-data/entity/review-video-data.en
 import { InstructorModule } from './instructor/instructor.module';
 import { Instructor } from './instructor/entity/instructor.entity';
 import { EmailModule } from './email/email.module';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ProjectModule } from './project/project.module';
 import { DatabaseSeederService } from './project/database-seeder.service';
 import { Project } from './project/entity/project.entity';

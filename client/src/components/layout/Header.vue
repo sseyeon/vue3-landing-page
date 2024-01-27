@@ -63,7 +63,7 @@ export default {
         },
         { to: "/internship", label: "INTERNSHIP" },
         { to: "/projects", label: "PROJECT" },
-        { to: "/instructors", label: "INSTRUCTOR" },
+        { to: "/mentor", label: "MENTOR" },
         { to: "/review", label: "REVIEW" },
         { to: "/apply", label: "APPLY" },
         { to: "", label: "LMS" },

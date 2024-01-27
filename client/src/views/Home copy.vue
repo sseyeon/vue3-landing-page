@@ -150,7 +150,7 @@
             아직도 망설여지시나요?
           </h1>
           <p class="text-center text-gray-600 mt-4 mb-10">
-            이미 102개의 기업이 함께 하고 있습니다.
+            이미 다수의 지자체, 공공기관, 기업, 대학교가 함께 하고 있습니다.
           </p>
           <EnterPriseList />
         </div>

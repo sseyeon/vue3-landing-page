@@ -83,7 +83,7 @@
       class="w-1/5 mx-4 mb-8 h-[60px] object-contain"
     />
     <img
-      src="@/assets/images/partners/Police_Academy.png"
+      src="@/assets/images/partners/daesang.png"
       class="w-1/5 mx-4 mb-8 h-[60px] object-contain"
     />
     <img
@@ -99,7 +99,7 @@
       class="w-1/5 mx-4 mb-8 h-[60px] object-contain"
     />
     <img
-      src="@/assets/images/partners/SpringCloud.png"
+      src="@/assets/images/partners/jtbc.png"
       class="w-1/5 mx-4 mb-8 h-[60px] object-contain"
     />
     <!-- 추가 이미지는 동일한 방식으로 추가 -->

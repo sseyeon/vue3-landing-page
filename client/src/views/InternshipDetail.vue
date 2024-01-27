@@ -60,6 +60,7 @@ export default {
   methods: {
     async fetchProjectData() {
       const projectId = this.$route.params.id // URL에서 id 파라미터를 가져옴
+      console.log(`${process.env.VUE_APP_API_URL}/project/${projectId}`)
       try {
         const response = await fetch(
           `${process.env.VUE_APP_API_URL}/project/${projectId}`
