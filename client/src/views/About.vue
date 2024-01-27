@@ -941,7 +941,7 @@
             </div>
           </div>
         </div>
-        <div class="container lg:w-10/12 mb-48">
+        <div class="container lg:w-10/12 mb-8">
           <swiper
             :modules="swiperModules"
             :slides-per-view="4"
@@ -953,6 +953,24 @@
           >
             <swiper-slide
               v-for="outcomeItem in outcomeData"
+              :key="outcomeItem.id"
+            >
+              <OutcomeCard :outcome="outcomeItem" />
+            </swiper-slide>
+          </swiper>
+        </div>
+        <div class="container lg:w-10/12 mb-48">
+          <swiper
+            :modules="swiperModules"
+            :slides-per-view="4"
+            :space-between="16"
+            :loop="true"
+            :pagination="{ clickable: true }"
+            :autoplay="{ delay: 2000, disableOnInteraction: false }"
+            @swiper="onSwiper"
+          >
+            <swiper-slide
+              v-for="outcomeItem in awardData"
               :key="outcomeItem.id"
             >
               <OutcomeCard :outcome="outcomeItem" />
@@ -1091,6 +1109,60 @@ export default {
         {
           id: 8,
           imgSrc: require("@/assets/images/bigleader-outcome/outcome-08.png"),
+        },
+      ],
+      awardData: [
+        {
+          id: 1,
+          imgSrc: require("@/assets/images/2023-award/award-01.jpg"),
+        },
+        {
+          id: 2,
+          imgSrc: require("@/assets/images/2023-award/award-02.jpg"),
+        },
+        {
+          id: 3,
+          imgSrc: require("@/assets/images/2023-award/award-03.jpg"),
+        },
+        {
+          id: 4,
+          imgSrc: require("@/assets/images/2023-award/award-04.jpg"),
+        },
+        {
+          id: 5,
+          imgSrc: require("@/assets/images/2023-award/award-05.jpg"),
+        },
+        {
+          id: 6,
+          imgSrc: require("@/assets/images/2023-award/award-06.jpg"),
+        },
+        {
+          id: 7,
+          imgSrc: require("@/assets/images/2023-award/award-07.jpg"),
+        },
+        {
+          id: 8,
+          imgSrc: require("@/assets/images/2023-award/award-08.jpg"),
+        },
+        {
+          id: 9,
+          imgSrc: require("@/assets/images/2023-award/award-09.jpg"),
+        },
+        {
+          id: 10,
+          imgSrc: require("@/assets/images/2023-award/award-10.jpg"),
+        },
+        {
+          id: 11,
+          imgSrc: require("@/assets/images/2023-award/award-11.jpg"),
+        },
+        {
+          id: 12,
+          imgSrc: require("@/assets/images/2023-award/award-12.jpg"),
+        },
+        {
+          id: 13,
+          imgSrc: require("@/assets/images/2023-award/award-13.jpg"),
         },
       ],
       swiperModules: [Navigation, Pagination, Scrollbar, Autoplay, A11y],
